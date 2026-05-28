@@ -47,4 +47,21 @@
 | `cd ~username` | Goes to that user's home directory |
 ---
                  
+## File Inspection 
+|Command|What it does|Notes|
+|-------|------------|-|
+|`file`|Displays file type and brief description|-|
+|`less`|Displays interactive display of content of file|Displays one screenful at a time|
 
+### Terminal Management
+|Command|What it does|
+|-------|------------|
+|`reset`|Restores terminal to sane state when its garbled|
+
+
+### less commands worth knowing
+|Command|What it does|
+|-------|------------|
+|`G`|Moves to end of text file|
+|`/`|To search for keywords|
+|`q`|To exit `less`|
