@@ -1,33 +1,51 @@
 # Linux Commands
 
-## Shortcuts
-|Shortcut|What it does|
-|--------|------------|
-|`cd`|Switches to home directory|
-|`cd -`|Switches to previous working directory|
-|`cd ~username`|Switches to home directory of said username|
----
-
 ## System Information
-|Command|Syntax|What it does|
-|-------|------|------------|
-|`date`|`date`|Displays the current date and time|
-|`cal`|`cal`|By default displays a calendar of the current month|
-|`df`|`df`|To see the amount of  currently free space on our *disk drives*|
-|`free`|`free`|To see the amount of free memory|
+|Command|What it does|
+|-------|-----------|
+|`date`|Displays the current date and time|
+|`cal`|By default displays a calendar of the current month|
+|`df`|To see the amount of  currently free space on our *disk drives*|
+|`free`|To see the amount of free memory|
 ---
 
 ## Shell and Environment
-|Command|Syntax|What it does|
-|-------|------|------------|
-|`exit`|`exit`|To end a terminal session by closing the *terminal emulator window*|
+|Command|What it does|
+|-------|------------|
+|`exit`|To end a terminal session by closing the *terminal emulator window*|
 ---
 
 ## Navigation
-|Command|Syntax              |What it does                                     |Notes|                   
-|-------|--------------------|-------------------------------------------------|     -|                     
-|`pwd`  |`pwd`               |Does what it stands for, 'print working directory|      -|                    
-|`ls`   |`ls [option] [path]`|Lists content of any directory                   |`ls -a` lists hidden files|
-|`cd`   |`cd [pathname]`     |To switch directories                            |       -|  
----                 
+| Command | What it does | Common Options |
+|---------|-------------|----------------|
+| `pwd` | Prints current directory path | — |
+| `ls` | Lists directory contents | See below |
+| `cd` | Changes directory | See below |
+
+### ls options
+| Option | What it does |
+|--------|-------------|
+| `-a` | Shows hidden files (starting with `.`) |
+| `-l` | Long format — shows permissions, size, date |
+| `-h` | Human-readable sizes (use with `-l`) |
+| `-r` | Reverses sort order |
+| `-S` | Sorts by file size |
+| `-t` | Sorts by last modified time |
+
+### ls combinations worth knowing
+| Command | What it does |
+|---------|-------------|
+| `ls -la` | Long format + hidden files |
+| `ls -lh` | Long format + readable sizes |
+| `ls -lt` | Long format + sorted by time |
+
+### cd shortcuts
+| Command | What it does |
+|---------|-------------|
+| `cd` | Goes to home directory |
+| `cd -` | Goes to previous directory |
+| `cd ~username` | Goes to that user's home directory |
+---
+
+
 

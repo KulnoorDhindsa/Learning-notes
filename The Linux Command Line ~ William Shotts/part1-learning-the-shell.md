@@ -48,3 +48,13 @@ Prefer underscores rather than spaces in filenames.
 - The Shell prompt displays the name of the current working  directory.
 - `./` is omitted in most areas as its implied.
 - By defualt, if a pathname is not specified to something, working directory is assumed.
+---
+
+## Chapter 3 - Exploring The System
+
+### `ls` Command
+`ls` can list contents of *multiple directories* as well, seperated by space.
+
+### Notes
+- `ls ~` lists contents of the home directory.
+- `ls -l` changes the output from horizontal to *vertical*.
