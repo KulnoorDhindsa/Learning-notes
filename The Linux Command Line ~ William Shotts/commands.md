@@ -46,6 +46,5 @@
 | `cd -` | Goes to previous directory |
 | `cd ~username` | Goes to that user's home directory |
 ---
-
-
+                 
 
