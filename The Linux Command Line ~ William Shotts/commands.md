@@ -61,21 +61,21 @@
 |`q`|To exit `less`|
 ---
 
-### Terminal Management
+## Terminal Management
 |Command|What it does|
 |-------|------------|
 |`reset`|Restores terminal to sane state when its garbled|
 ---
 
-### File Management
+## File Management
 |Command|What it does|Notes|
 |-------|------------|----|
 |`mkdir`|Creates new directories|`mkdir dir1 dir2 dir3` would make three seperate directories|
-|`cp`|Copies files or directories|
-|`mv`|Moves or renmes files|`mv file1 file2` moves content of file1 to file2 if file2 exists, and renames file1 to file2 if file2 doesnt exist|
-|`rm`|To delete files or directories|
+|`cp`|Copies files or directories|`cp /dir1/file1 .` copies file1 from 'dir1' to current working directory (.)|
+|`mv`|Moves or renames files|`mv file1 file2` moves content of file1 to file2 if file2 exists, and renames file1 to file2 if file2 doesnt exist|
+|`rm`|To delete files or directories|`rm /dir/file1` removes file1|
 |`ln file link`|Creates a hard link for a file|
-|`ln -s item link`|To create hard link for item (file or directory)
+|`ln -s item link`|To create symbolic link for item (file or directory)|
 
 Common `cp` options:
 |Options|Meaning|
@@ -92,8 +92,20 @@ Common `rm` options:
 |`-r` or `--recursive`|To delete sub-directories in a director also i.e. to **completely delete a directory**|
 |`-f` or `--force`|To not show *error* if file is nonexistant, instead no response and rady for next command i.e. *suppress errors and prompts, just execute*|
 
-
 `cp file1 file2` copies content of file1 into file2 (destroys content of file2 (if exists)). If file2 doesnt exist, then Shell creates a new file 'file2' with file1's content.
 `cp file1 file2 dir1` copies content of file1 and file2 into directory dir1.
 
 `mkdir dir...` `cp item... directory` and in other commands followed by `...` means that these commands can be repeated for different files sepearated by a space.
+
+`rm -r dir1` deleted the directory 'dir1' and **everything inside** it, including sub-directories.
+`-r` is IMPORTANT to delete complex directories.
+---
+
+## Information Command
+|Command|What it does|Notes|
+|-------|------------|-----|
+|`type`|Tells if command is builtin, alias, function or external binary and where it lives||
+|`which`|Determines exact location of an executable file||
+|`help`|Displays information on shell builtins|`help cd` displays information on builtin `cd`|
+|`--help`|Displays description of command's syntax and options||
+|`man`|Displays manual page for executable commands||

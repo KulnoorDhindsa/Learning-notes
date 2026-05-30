@@ -93,9 +93,16 @@ Unlike `more`, `less` pages backward and forward, along with extra commands like
 ### Everything is a file
 Core Unix philosophy is that devices, processes, sockets, directories - all are treated as files.
 
-### Links (Briefly)
-  1. A symlink lets you give a file a stable nickname, so the underlyinh real file can change without breaking anything that dipends on that nickname.
-  2. A hard link is sa pointer *directly to data on the disk* rather than a filename.
+### Links 
+Every file has two parts, **Inode** i.e. the actuall data + metadata (permissions, size etc) and **Filename** , a pointer to the inode.
+### Hard Link
+Its another type of filename pointing to the same inode.
+Actual data remains untill **all** hardlinks to a file aren't deleted.
+
+### Symbolic Link
+Symlink is a seperate file that stores the path to another file. Its a shortcut.
+
+Symlink has its **own Inode**.
 ---
 ## Chapter 4 - Manipulating Files and Directories
 
@@ -125,9 +132,23 @@ Commonly used wildcards:
 
 - `*-` anything before
 - `[...]` match exactly one characters that must be any of the things inside the bracket.
+---
 
 ### No Undelete command in Linux
 In Unix-like OS like Linux, there is no undelete command for `rm`.
 `rm *.html` deletes all HTML files frmo a directory.
 `rm * .html` deleted everything first, then tries to delete the HTML files but since everything is delelted already, it shows error.
+---
 
+## Chapter 5 Working With Commands
+
+### Commands
+Commands could be:
+- **Executable Programs**: commands written in C and C++ or written in scripting languages like Shell, Python etc.
+- **Built into the Shell**: `bash` supports commands internally called *shell builtins* like `cd`.
+- **Shell function**: mini shell scripts in the environment.
+- **Alias**: commands defined by us and built using other commnds.
+
+`ls` is an alias for `ls --color=tty`, thus it displays color-coded output.
+
+`which` works for executable programs only.
