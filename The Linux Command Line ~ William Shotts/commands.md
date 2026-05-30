@@ -67,12 +67,15 @@
 |`reset`|Restores terminal to sane state when its garbled|
 ---
 
-### File Manipulation
+### File Management
 |Command|What it does|Notes|
 |-------|------------|----|
 |`mkdir`|Creates new directories|`mkdir dir1 dir2 dir3` would make three seperate directories|
 |`cp`|Copies files or directories|
 |`mv`|Moves or renmes files|`mv file1 file2` moves content of file1 to file2 if file2 exists, and renames file1 to file2 if file2 doesnt exist|
+|`rm`|To delete files or directories|
+|`ln file link`|Creates a hard link for a file|
+|`ln -s item link`|To create hard link for item (file or directory)
 
 Common `cp` options:
 |Options|Meaning|
@@ -81,6 +84,13 @@ Common `cp` options:
 |`-u` or `--update`|While copying files from directories, Shell copies *non-existant* or *updated* files only to the new directory|
 |`-v` or `--verbose`|Displays vital information while copying|
 |`-r` or `--recursive`|Gives permission to go through deep into complex directories having files and sub-directories to copy everything into a new directory|
+
+Common `rm` options:
+|Options|Meaning|
+|-------|-------|
+|`-i` or `--interactive`|Prompts user for confirmation before removing file/directory|
+|`-r` or `--recursive`|To delete sub-directories in a director also i.e. to **completely delete a directory**|
+|`-f` or `--force`|To not show *error* if file is nonexistant, instead no response and rady for next command i.e. *suppress errors and prompts, just execute*|
 
 
 `cp file1 file2` copies content of file1 into file2 (destroys content of file2 (if exists)). If file2 doesnt exist, then Shell creates a new file 'file2' with file1's content.

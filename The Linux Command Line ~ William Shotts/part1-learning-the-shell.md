@@ -126,3 +126,8 @@ Commonly used wildcards:
 - `*-` anything before
 - `[...]` match exactly one characters that must be any of the things inside the bracket.
 
+### No Undelete command in Linux
+In Unix-like OS like Linux, there is no undelete command for `rm`.
+`rm *.html` deletes all HTML files frmo a directory.
+`rm * .html` deleted everything first, then tries to delete the HTML files but since everything is delelted already, it shows error.
+
