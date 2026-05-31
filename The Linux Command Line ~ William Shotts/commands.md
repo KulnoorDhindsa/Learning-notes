@@ -109,3 +109,5 @@ Common `rm` options:
 |`help`|Displays information on shell builtins|`help cd` displays information on builtin `cd`|
 |`--help`|Displays description of command's syntax and options||
 |`man`|Displays manual page for executable commands||
+|`apropos`|Lists all command whose man page descriptions match the entered keywords|`apropos network` lists all commands related to "network"|Better option than Googling|
+|`whatis`|Displays the name and one-line description of a man page that matches the keyword/command entered|
