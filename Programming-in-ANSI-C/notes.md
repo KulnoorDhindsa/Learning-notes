@@ -185,14 +185,8 @@ If test expression is true, then the true block statement is executed. If its fa
 ### 6.3 Nesting of If...Else
 Another `If...Else` can be nested in a larger `If...Else` along with indentation for better understanding of the code.
 
+## Chapter 7 - Decision Making and Looping
+`for` Loop: Used when we know how many times the loop has to be run.
+`do...while` and `while` Loop: Used when we don't know how mnay times the loop has to be run.
+
 ## Chapter 8 - Array
-
-
-
-
-
-
-
-
-for loop: when you know how many times you hvae to run the loop
-do/while loop: when you dont know how many times to run the loop
