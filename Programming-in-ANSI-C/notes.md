@@ -1,18 +1,8 @@
 # Notes
 
-## Chapter 1 - Introduction to Computing
-Computer is an electronic device capable to perform arithmetic and logical calculations.
-
-Components of a computer:
-***CPU (Central Processing Unit)**:
-All processing activities take place in it. Its a VLSI circuit consisting of ALU and CU.
-
----
-## Chapter 4 - Operators and Expressions
-
-### 4.1 Operators
+### Operators
 Symbols that tell the computer to perform logical or mathematical operations to manipulate data and variables.
-### 4.1.1 Arithmetic Operators
+1. #### Arithmetic Operators
 |Operator|What it does|How its used|Notes|
 |--------|------------|------------|---|
 |`+`|Addition|a+b||
@@ -31,7 +21,7 @@ The decimal part is truncated while using `/` and `%`.
 
 **Mixed-mode Arithmetic**: Arithmetic operation involving mixed operands (real and `int`).
 
-### 4.1.2 Relational Operators
+2. #### Relational Operators
 Operators used for establishing realtions between variables and constants.
 
 *Relational Expression*: Expression containing relational operators.
@@ -48,7 +38,7 @@ Value of relational expression is: 1 is true, 0 if false.
 
 >Arithemtic Operators have **higher** priority than relational operators.
 
-### 4.1.3 Logical Operators
+3. #### Logical Operators
 Operators that evaluat **boolean conditions** and return either 1(true) or 0(false).
 
 |Operator|Logical Name|Syntax|Returns 1 when|
@@ -63,7 +53,7 @@ Operators that evaluat **boolean conditions** and return either 1(true) or 0(fal
 
 *Double Negation* i.e. `!5` and `!!5` returns 0 and 1 respectively.
 
-### 4.1.4 Assignment Operators
+4. #### Assignment Operators
 Operators used to assign results of expressio to variables.
 
 |Operator|Syntax|What it does|
@@ -80,7 +70,7 @@ Shorthand Assigment Operators `op=`
 |`/=`|a /= b|a = a / b|
 |`%=`|a %= b|a = a % b|
 
-#### 4.1.5 Increment and Decrement Operators
+5. #### Increment and Decrement Operators
 Operators that add 1 or subtract 1 from a variable.
 
 |Operators|Syntax |a=?|x=?|What they do                         |
@@ -98,33 +88,31 @@ Operators that add 1 or subtract 1 from a variable.
 >int y = x++;
 >// x=6, y=5 (usage first, then increment)
 
-### 4.1.6 Conditional Operators
+6. #### Conditional Operators
 Its a shorthand for if-else in one line.
 
 `exp1 ? exp2 : exp3` read as - ***If exp1 is true, give me exp2, otherwise give me exp3**.
 
 Only **one** of exp2 or oxp3 is ever run, like in **if-else**.
 
-### 4.1.7 Bitwise Operators
+7. ####  Bitwise Operators
 Operators that manipulate data at the binary level.
 
 **NOT** applicable to **float** or **double**.
 
-### 4.1.8 Special Operators
+8. #### Special Operators
 |Operator|What it does|
 |--------|------------|
 |`,`| |
 |`sizeof`|`m = sizeof(operand);` , gives number of bytes occupied by operand|
----
 
 >variable=expression;
 
 The expression is evaluated first and then that value is given to the variable.
 
 All variables used should have be declared prior in the code.
----
 
-### 4.2 Precedence of Operators
+### Precedence of Operators
 ( ) expression within () is guven **HIGHEST PRIORITY** from left to right.
 If () are nested, evaluation starts from inner most ().
 
@@ -135,8 +123,7 @@ If () are nested, evaluation starts from inner most ().
 High priority operators are evaluated first followed by lower priority operators.
 ---
 
-### 4.3 Type Conversions
-### 4.3.1 Implicit Type Conversion
+### Type Conversions
 Automatic conversion of intermediate values to proper type for evaluation.
 During evaluation, the *lower* type is converted to the *higher* type.
 
@@ -150,15 +137,19 @@ During final assignment:
 - **double** to **float** rounds off digits.
 - **long int** to **int** causes dropping of excess higher order bits.
 
-### 4.3.2 Explicit Conversion
-Local conversion.s
-
-**(type-name) expression**
+Conversion can be done in 2 ways: 
+1.      ```c
+        prod=(float)a*b;
+        ```
+2.      ```c
+        prod=(1.0)a*b;
+        ```
+   
 
 ---
-## Chapter 6 - Decision Making and Branching
+## Decision Making
 
-### 6.1. IF Statement
+### IF Statement
 Evaluates the given expression, based on the output, if true (non-zero) or false (zero), it transfers control to a statement.
 
 ```c
@@ -168,7 +159,7 @@ if (test expression)
 }
 statement-x;
 ```
-### 6.2 IF...Else Statement
+### IF...Else Statement
 ```c
 if (test expression)
     {
@@ -182,11 +173,54 @@ statementx;
 ```
 If test expression is true, then the true block statement is executed. If its false, the false block statement in `else` is executed. After the loop is exited, statement-x and the rest of the code following the loop are executed.
 
-### 6.3 Nesting of If...Else
-Another `If...Else` can be nested in a larger `If...Else` along with indentation for better understanding of the code.
+---
+## Loops
 
-## Chapter 7 - Decision Making and Looping
-`for` Loop: Used when we know how many times the loop has to be run.
-`do...while` and `while` Loop: Used when we don't know how mnay times the loop has to be run.
+LOOP = CTRL statement + BODY of LOOP
 
-## Chapter 8 - Array
+A loop requires 3 things:
+1. **Initialisation**
+2. **Checking**
+3. **Updation**
+
+|Entry Ctrl Loop|Exit Ctrl Loop|
+|----------|--------------|
+|Ctrl condition is checked before executing the loop for first time|Ctrl condition is checked after executing the loop for first time|
+
+### While Loop
+Entry Ctrl Loop
+
+```c
+while (test expression)
+    {
+        body of loop
+    }
+statement;
+```
+Executes body of loop untill the test expression holds true.
+
+**Initialisation** takes place before the `while` loop. **Checking** takes place in the 'test expression', and **Updationg** takes place in the body of loop.
+
+### Do Loop
+Exit Ctrl Loop
+
+```c
+do
+{
+    body of loop
+}
+while (test expression);
+```
+Executes body of loop once before checking then works same way as `while` loop.
+
+### For Loop
+Entry Ctrl Loop
+
+```c
+
+>`for` Loop: Used when we know how many times the loop has to be run.
+
+>`do...while` and `while` Loop: Used when we don't know how many times the loop has to be run.
+
+---
+## Arrays
