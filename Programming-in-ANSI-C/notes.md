@@ -216,11 +216,48 @@ Executes body of loop once before checking then works same way as `while` loop.
 ### For Loop
 Entry Ctrl Loop
 
-```c
+
 
 >`for` Loop: Used when we know how many times the loop has to be run.
-
 >`do...while` and `while` Loop: Used when we don't know how many times the loop has to be run.
 
 ---
 ## Arrays
+Regular variables hold **one** value.
+```c
+int x=2;
+```
+Arrays hold **multiple values of same type**.
+```c
+int x[2];
+//array x holds 2 integers
+```
+2 in bracket is **size**, the total number of elements it can store.
+
+```c
+int x[2]; //creates array x holding 2 integer values
+x[0] = 1; //first element of array hold value 1
+x[1] = 4; //last element of array holds value 4
+```
+'0' and '1' in [] are *indices* plural and *index* singular.
+
+>If size is `n`, then indices are `0` to `n-1`.
+
+To enter values in array, a loop is used where each time loop runs, it stores one element.
+```c
+int x[15], i;
+for (i=0; i<15; i++)
+    {
+        scanf("%d", &x[i]);
+    }
+```
+To print an array:
+```c
+for (i=0; i<15; i++)
+    {
+        printf("%d", x[i]);
+    }
+```
+**Variable Length Array (VLA)**: Arrays whose size is entered by the user and then stored in the array.
+>`/*....*/` is for multi-line comments.
+>`//` is for single line comments.
