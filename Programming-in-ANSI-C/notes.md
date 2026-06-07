@@ -1,5 +1,12 @@
 # Notes
 
+### Keywords and Identifiers
+|Keywords|Identifiers|
+|--------|-----------|
+|Fixed meanings|User-defined to store vaues of variables, functions and arrays|
+|Lowercase|Lowercases and Uppercases|
+
+---
 ### Operators
 Symbols that tell the computer to perform logical or mathematical operations to manipulate data and variables.
 1. #### Arithmetic Operators
@@ -121,8 +128,8 @@ If () are nested, evaluation starts from inner most ().
 >LOW PRIORITY: `+` > `-`
 
 High priority operators are evaluated first followed by lower priority operators.
----
 
+---
 ### Type Conversions
 Automatic conversion of intermediate values to proper type for evaluation.
 During evaluation, the *lower* type is converted to the *higher* type.
@@ -144,7 +151,28 @@ Conversion can be done in 2 ways:
 2.      ```c
         prod=(1.0)a*b;
         ```
-   
+
+---
+### Reading, Printing Characters
+```c
+char ans;
+printf("Are you above 18 years old? (Type Y for yes and N for no)");
+ans = getchar();
+if (ans==Y)
+{
+    printf("You can vote!");
+}
+else
+{
+    printf("Too young to vote!");
+}
+```
+`getchar` stores value entered by user (Y or N) in 'ans'.
+
+```c
+
+```
+`isalpha` assumes >0(True) value if entered character includes an alphabet and assumes value 0(False) otherwise.
 
 ---
 ## Decision Making
@@ -173,6 +201,18 @@ statementx;
 ```
 If test expression is true, then the true block statement is executed. If its false, the false block statement in `else` is executed. After the loop is exited, statement-x and the rest of the code following the loop are executed.
 
+### Else IF Statement
+```c
+if (test expressio)
+{
+    True block statement;
+}
+else if (test expression)
+{
+    statement;
+}
+```
+Used when another `if` statement is being executed in the `else` block.
 ---
 ## Loops
 
@@ -215,8 +255,12 @@ Executes body of loop once before checking then works same way as `while` loop.
 
 ### For Loop
 Entry Ctrl Loop
-
-
+```c
+for(initialisation; checking; updation)
+{
+    body of loop;
+}
+```
 
 >`for` Loop: Used when we know how many times the loop has to be run.
 >`do...while` and `while` Loop: Used when we don't know how many times the loop has to be run.
