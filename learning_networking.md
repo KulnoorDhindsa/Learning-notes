@@ -44,5 +44,23 @@ Same protocols need to be followed by different end systems on the Internet for 
 **Access Networks**: The physical network that connects end sytem to the firt router (*edge router*) on a route to other end systems.
 
 Ways for end systems to gain Internet Acess at **HOME**: 
-1. **Digital Subscriber Line(DSL)**: Residential broadband access that uses existing twisted-pair telephone lines to transmit data at different frequencies than traditional phone calls.
-    - *higher frequencies*: 
+1. **Digital Subscriber Line(DSL)**: Residential broadband access that uses existing twisted-pair telephone lines to transmit data at different frequencies than traditional phone calls on the same twisted-pair copper wire.
+    - *higher frequency*: exploited for DSL data (higher frequency has higher bandwidth capacity, ideal for internet data).
+    - *lower frequency*: voice calls, as human voice only physically produces sound in thsi range.
+    **Digital Subscriber Line Access Multiplexer**: combines different copper lines and converts DSL signals into IP packets.
+```
+Internet Backbone
+      ↓
+   DSLAM  (sits at the telephone exchange, aggregates lines, connects to ISP backbone)
+      ↓
+  Copper twisted-pair phone line  (the local loop, carries voice + data simultaneously)
+      ↓
+  Splitter  (separates voice 0-4kHz from data 25kHz-1.1MHz)
+      ↓
+  DSL Modem  (converts high frequency signals into digital data for the router to understand)
+      ↓
+  Router  (distributes internet to all devices on local network)
+      ↓
+  Your devices
+  ```
+  2. **Cable Internet Access**: Residence obtains internet access from teh same company thta provides television network
