@@ -89,6 +89,29 @@ One fiber leaves the CO, then after reaching close to the homes, it **splits** i
 |Dedicated to one user|Shared among many people|
 |Larger range (about 100km)|Lower range (about 20-30km)|
 
+4. **Satellite Link**: Areas where DSL, cable and FTTH can't reach, satellite links connect residence to the internet.
 
+Ways for end systems to gain Internet Acess at **Work/Enterprise**:
+5. **Ethernet**: Nost prevelant LAN access technology in corporate.
+
+6. **Wireless**: User be wihin tens of kilometers range for wireless transfer of data via cellular telephone network.
+
+Multiple generation wireless (3G, 4G, 5G etc) have been developed with packet-switched wide area wireless Internet access.
+
+### Physical Media
+Refers to the mediums (of various shapes, sizes and materials) a bit travels between transmitter-reciever pairs.
+- **Guided Media**: Electromagnetic waves are guided along a solid medium (eg. twisted copper wires, fiber optic cables etc).
+- **Unguided Media**: Waves propagate in the atmosphere (eg. LAN, satellite links etc).
+
+Common physcial media includes: 
+- Twisted-Pair Copper Wire
+- Coaxial Cable (guided shared mediums)
+- Fiber Optics
+- Radio Channels (no physcial medium reqwuired; various types based off of range)
+- Satellite Radio Channels ()
+
+|Geostationary Satellites|Low-Earth Orbiting Satellites (LEO)|
+|------------------------|-----------------------------------|
+|Remain permanently above fixed spots on Earth by revolving in orbit at 36,000 km above Earth's surface|Placed closer to Earth, not upon fixed spots|
 
 
