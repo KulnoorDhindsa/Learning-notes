@@ -46,8 +46,9 @@ Same protocols need to be followed by different end systems on the Internet for 
 Ways for end systems to gain Internet Acess at **HOME**: 
 1. **Digital Subscriber Line(DSL)**: Residential broadband access that uses existing twisted-pair telephone lines to transmit data at different frequencies than traditional phone calls on the same twisted-pair copper wire.
     - *higher frequency*: exploited for DSL data (higher frequency has higher bandwidth capacity, ideal for internet data).
-    - *lower frequency*: voice calls, as human voice only physically produces sound in thsi range.
-    **Digital Subscriber Line Access Multiplexer**: combines different copper lines and converts DSL signals into IP packets.
+    - *lower frequency*: voice calls, as human voice only physically produces sound in this range.
+
+**Digital Subscriber Line Access Multiplexer**: combines different copper lines and converts DSL signals into IP packets.
 ```
 Internet Backbone
       ↓
@@ -63,4 +64,31 @@ Internet Backbone
       ↓
   Your devices
   ```
-  2. **Cable Internet Access**: Residence obtains internet access from teh same company thta provides television network
+  2. **Cable Internet Access**: Residence obtains internet access from teh same company that provides television network.
+
+**Cable Modem Termination System** is analogus to DSLAM, turns analog signals from cable modems into digital format.
+
+**Hybrid Fiber Coax(HFC)**: A broadband network using **fiber optic cable** for backbone (from ISP's headend to home distribution points), then switches to **coaxial cable** into homes and businesses.
+- *fiber* carries massize bandwidth for long distances with near-zero signal degradation, but is very expensive to use everywhere.
+- Data via HFC is controled by **Data Over Cable Service Interface Specification(DOCSIS)**. 
+
+Coax is a **shared medium**. Frequency is split accordingly:
+
+|Direction|Frequency|Used For|
+|----------|------------------|--------------------|
+|Downstream|*higher frequency*|Data coming to you|
+|Upstream  |*lower frequency* |Data you upload/send|
+
+3. **Fibre To The Home(FTTH)**: An accss technology that provides optical fiber connection directly from central office(CO) to the home.
+
+One fiber leaves the CO, then after reaching close to the homes, it **splits** into home-specific wires via the following two network architechtures:
+
+|**Active Optical Network(AON)**|**Passive Optical Network(PON)**|
+|-------------------------------|-------------------------------|
+|Electrically active (uses routers and power switches)|Electrically passive (uses unpowered slitters)|
+|Dedicated to one user|Shared among many people|
+|Larger range (about 100km)|Lower range (about 20-30km)|
+
+
+
+
