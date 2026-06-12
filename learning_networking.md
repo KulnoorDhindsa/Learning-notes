@@ -114,4 +114,54 @@ Common physcial media includes:
 |------------------------|-----------------------------------|
 |Remain permanently above fixed spots on Earth by revolving in orbit at 36,000 km above Earth's surface|Placed closer to Earth, not upon fixed spots|
 
+## 1.3 The Network Core
+
+### Packet Switching
+Data is brocken into smaller chunk 
+
+**packets** to send messages from source to reciever end system.
+
+Packet switches have two main types: **routers** and **link-layer switches**.
+
+- **Store-and-Forward Transmission**: Packet switches require entire packet to be delivered before sending first bit of data through the outbound link.
+- **Output buffer**/**Output Queue**: A storage area in a packet switch that stores packets that the router is about to send out.
+- **Queuing Delays**: If a packet is to be sent out from an outbound link, but the link is busy with transmission of another packet, the new packet has to wait, thus the delay.
+- **Packet Loss**: If the buffer space is all occupied, the new packet has no where to be stored, thus either the arriving packet or already-queued packet will be dropped.
+- **IP address**: Address of every end system on the Internet.
+- When source end system sends a packet of information, it includes *packet header* which has meta data of that packet, including iIP address of the destination end system. Thus, router knows which communication link to send that packet to.
+- **Forward Table**: A data structure in the router that maps destination IP prefixes.
+- **Routing Protocols**: Automatically set 
+the forwarding tables.
+
+>The Internet is a packet-switching network.
+
+### Circuit Switching
+Resources equired (links, transmission rates) are *reserved* before commuinications starts between two end systems.
+
+**Circuit**: A dedicated end-to-end connection established between two hosts when the network reserves a **constant transmission rate** for the duration of the session.
+
+Circuit is efficiently implemented by either of the following two ways:
+
+|**Frequency-Division Multiplexing(FDM)**|**Time-Division Multiplexing(TDM)**|
+|-------------------|-----------------|
+|Method of implementing a circuit by *dividing the frequency spectrum* of a link into bands, with each band dedicated to a specific connection|Method where *time is divided into frames* of fixed duration, and each frame is divided into time slots; each connection is dedicated one time slot in every frame|
+
+### Network Of Networks
+Network of Network refers to the connection of billions of ISPs across the Internet. ISPs include not only telephone or cable companies, but also any type of access provider (eg. universities providing WiFi to students).
+
+**Regional ISPs**: ISPs of a specified region.
+
+**Tier-1 ISPs**: Similar to global transit ISPs, but not present in every city.
+Eg, AT&T. Sprint and NTT.
+
+**Point of Presence(PoP)**: A goup of one or more routers in a provider's network where customer ISPs connect to the provider.
+
+**Multi-homing**: The practice of ISP connecting to **two or more** provider ISPs to ensure continued service.
+
+**Peering**: Agreement where nearby ISPs at similar level directly connect their networks to exchange traffic settlement free(**without paying eachother**).
+
+**Internet Exchange Point(IXP)**: Physical meeting points where multiple ISPs peer together.
+
+**Content Povider Networks**: Private networks operated by companies like Google to distribute content to end users while bypassing upper tiers of public interest.
+
 
