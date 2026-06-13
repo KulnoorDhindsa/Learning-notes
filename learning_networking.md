@@ -164,4 +164,16 @@ Eg, AT&T. Sprint and NTT.
 
 **Content Povider Networks**: Private networks operated by companies like Google to distribute content to end users while bypassing upper tiers of public interest.
 
+## 1.4 Delay, Loss and Throughput in Packet-Switched Networks
+**Nodal Delay**: Total delay experienced by packet at a node (router) which is sum of processing, queung, transmissiom and propagation delay.
+
+**Processing Delay**: The time required for a router to examine the packet's header and determine where to direct it. It also includes the time to check for bit-level errors.
+
+**Queung Delay**: The time a packet spends in a queue (buffer) to be transmitted onto a link. Delay ranges from zero to milliseconds based on traffic congestion.
+
+**Transmission Delay**: Time required to transmit all packet bits into the link. It ranges from microseconds to milliseconds.
+
+**Propagation Delay**: Time taken for a bit to travel from beginning of a link to the next router or host. Depends largely on physical medium material.
+
+>Propagation Delay is calculated by dividing distance of link by propagation speed of the medium.
 
