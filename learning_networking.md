@@ -177,3 +177,9 @@ Eg, AT&T. Sprint and NTT.
 
 >Propagation Delay is calculated by dividing distance of link by propagation speed of the medium.
 
+**Traffic Intensity**: The ratio *La/R*, where *L* is packet size, *a* is average packet arrival rate, and *R* is transmission rate. Estimates extent of queuing delay.
+
+>If traffic intensity > 1, then the queue will grow without bound.
+
+**Packet Loss**: Occurs when a packet arrives at a router's buffer that is already full. With no place to store packet, router **drops** (looses) it.
+
