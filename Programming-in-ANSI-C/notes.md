@@ -305,3 +305,33 @@ for (i=0; i<15; i++)
 **Variable Length Array (VLA)**: Arrays whose size is entered by the user and then stored in the array.
 >`/*....*/` is for multi-line comments.
 >`//` is for single line comments.
+
+---
+## Pointers
+Every declared variable lives in the RAM at an **address** - a number.
+```c
+int x = 8;
+```
+A *box* is made in the memory at address `1000` and contains value `8`.
+
+**Pointer**: Its a variable that stored an address of a regular value.
+```c
+int *p = &x; //Read as: Pointer P equals to address of x
+```
+|Symbol|Eg|Meaning|
+|------|---|------|
+|`&`|`&x`|at the address of|
+|`*`(while declaring)|`int *x`|this is a pointer|
+|`*`(after declaring)|`*x`|go to address of x and get value stored there|
+
+```c
+int x=2;;
+int *p=&x; //declares p as a pointer
+printf("%d is value of x", x);
+printf("%u is address of %d", *p, x);
+printf("%d is address of %d", p, x);
+printf("%d is address of %d", &x, x);
+printf("%d is value stored at %u", x, *p);
+
+*p=10; //at the address `p`, store the value 10; x is now 10
+```

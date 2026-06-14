@@ -165,6 +165,8 @@ Eg, AT&T. Sprint and NTT.
 **Content Povider Networks**: Private networks operated by companies like Google to distribute content to end users while bypassing upper tiers of public interest.
 
 ## 1.4 Delay, Loss and Throughput in Packet-Switched Networks
+
+### Delays
 **Nodal Delay**: Total delay experienced by packet at a node (router) which is sum of processing, queung, transmissiom and propagation delay.
 
 **Processing Delay**: The time required for a router to examine the packet's header and determine where to direct it. It also includes the time to check for bit-level errors.
@@ -180,6 +182,8 @@ Eg, AT&T. Sprint and NTT.
 **Traffic Intensity**: The ratio *La/R*, where *L* is packet size, *a* is average packet arrival rate, and *R* is transmission rate. Estimates extent of queuing delay.
 
 >If traffic intensity > 1, then the queue will grow without bound.
+
+### Losses
 
 **Packet Loss**: Occurs when a packet arrives at a router's buffer that is already full. With no place to store packet, router **drops** (looses) it.
 
