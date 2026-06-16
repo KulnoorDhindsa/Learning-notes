@@ -335,3 +335,7 @@ printf("%d is value stored at %u", x, *p);
 
 *p=10; //at the address `p`, store the value 10; x is now 10
 ```
+
+---
+## Functions
+

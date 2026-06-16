@@ -177,6 +177,10 @@ Eg, AT&T. Sprint and NTT.
 
 **Propagation Delay**: Time taken for a bit to travel from beginning of a link to the next router or host. Depends largely on physical medium material.
 
+Other delays include:
+- End systems *purposefully* delay sending a packet into *shared medium* as part of protocol.
+- **Media Packetization Delay**: Majorly in Voice-over-IP (VoIP), sending end system encodes digitized speech before passing it to the Internet. Time taken for this digitization causes integral delay in packet transmission.
+
 >Propagation Delay is calculated by dividing distance of link by propagation speed of the medium.
 
 **Traffic Intensity**: The ratio *La/R*, where *L* is packet size, *a* is average packet arrival rate, and *R* is transmission rate. Estimates extent of queuing delay.
@@ -184,6 +188,12 @@ Eg, AT&T. Sprint and NTT.
 >If traffic intensity > 1, then the queue will grow without bound.
 
 ### Losses
-
 **Packet Loss**: Occurs when a packet arrives at a router's buffer that is already full. With no place to store packet, router **drops** (looses) it.
+
+### Throughput in Computer Networks
+**Throughput**: Rate ( bits/second) at which destination host recieves file from sender host.
+
+**Bottleneck Link**: The line in a network path that has the lowest transmission rate, thereby limiting the end-to-end throughput for a file transfer.
+
+
 
