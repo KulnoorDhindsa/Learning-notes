@@ -195,5 +195,30 @@ Other delays include:
 
 **Bottleneck Link**: The line in a network path that has the lowest transmission rate, thereby limiting the end-to-end throughput for a file transfer.
 
+## 1.5 Protocol Layers and Their Service Models
+**Layering**: Structural process organises functionality of complex systems by dividing them into a series of horizontal levels.
+- **Service Model**: Each layer, combined with layers below it, performs services and executes internal actions.
+- **Modularity**: Internal implementation can be modifed as long as it provides the **same services** and uses the **same services provided from below layer**.
+- **Encapsulation**: (In networking) Each layer receives a **payload** (data) from above, appends its own **header fields** and passes teh resulting package to next layer as new payload.
+
+### Layer Architecture
+**Protocol Stack**: The collective name given to protocols belonging to various layers
+
+**Internet Protocol Stack**: The five-layer architecture that organizes the Internet, consists of - **application, transport, network, link and physical layers**.
+1. **Application Layer**: The top layer where network applications and their protocols reside. Data at this layer is called **message**. Protocols at this level include:
+    - **HTTP** (provides for Web document requst and transfer)
+    - **SMTP** (provides for transfer of e-mail messages)
+    - **FTP** (provides for transfer of files between two end systems)
+2. **Transport Protocol**: Transports application-layer messages between endpoints. Data at this level is called **segment**. Protocol at this level are only two:
+    - **TCP** (connection oriented service; flow control; breaks messages intro shorter segments)
+    - **UDP** (connectionless service; no flow control; no connection control)
+3. **Network Layer**: Moves **datagrams** from one host to another. Protocols at this layer include:
+    - **IP** (defines fields in datagrams)
+    -*routing protocols* (determine routes taken by datagram between two end systems)
+    4. **Link Layer**: 
+
+
+
+
 
 
