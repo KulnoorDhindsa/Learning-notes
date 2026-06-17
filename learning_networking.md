@@ -215,10 +215,7 @@ Other delays include:
 3. **Network Layer**: Moves **datagrams** from one host to another. Protocols at this layer include:
     - **IP** (defines fields in datagrams)
     -*routing protocols* (determine routes taken by datagram between two end systems)
-    4. **Link Layer**: 
+4. **Link Layer**: Responsible for moving packets from one node to the next over a single communication link (eh, Ethernet, WiFi). Data at this level is **frame**.
+5. **Physical Layer**: Moves the individual bits within the frame from one node to the next over physical medium.
 
-
-
-
-
-
+**OSI RReference Model**: A seven-layer model developed by ISO. In addition to the five Internet layers, it includes the **Presentation Layer** (data interpretation/encryption) and the **Session Layer** (synchronization and recovery).
