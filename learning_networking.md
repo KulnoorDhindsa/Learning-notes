@@ -219,3 +219,6 @@ Other delays include:
 5. **Physical Layer**: Moves the individual bits within the frame from one node to the next over physical medium.
 
 **OSI RReference Model**: A seven-layer model developed by ISO. In addition to the five Internet layers, it includes the **Presentation Layer** (data interpretation/encryption) and the **Session Layer** (synchronization and recovery).
+
+**Encapsulation**: The process where each layer adds its own **header fields** to the data (**payload**) recieved from the layer above it.
+
