@@ -222,3 +222,27 @@ Other delays include:
 
 **Encapsulation**: The process where each layer adds its own **header fields** to the data (**payload**) recieved from the layer above it.
 
+## 1.6 Network Under Attack
+**Malware**: Software designed to damage, disrupt or gain unautherized access to a computer system
+
+### Types of Malware (By Spreading Method)
+1. **Viruses**: Require user interaction
+    - Eg: email attachement containing executable code
+    - Often *self-replicating*
+2. **Worms**: Don't require specific user interaction
+    - Exploits vulnerability in a network application or OS
+    - Scans Internet for other hosts running on same vulnerable application
+
+### Types of Malware (By Malicious Activities)
+1. **Spyware**: Collects private information from device
+    - Eg: collecting passwords, even keystrokes and sending them back to the attacker
+2. **Botnet Enrollment**: A compromised host maybe  enrolled in a 'botnet', network of many similarly infected devices
+    - **Distributed Denial-of-Service (DDoS)** attacks maybe launched in botnets against other targets.
+
+**Denial-of-Service (DoS) Attacks**: Attacks intended to make a network or server unusable for legitimate users, often by flooding it with traffic.
+
+**Packet Sniffing**: Placing a passive reciever near a transmitter to record copies of every packet flying by, thus revealing sensitive data to the attacker.
+
+**IP Spoofing (Masquerading)**: The specific ability to hand-craft a packet with an arbitrary source address to trick a receiver into believing the message orignated from a trusted source.
+
+
