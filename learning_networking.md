@@ -245,4 +245,32 @@ Other delays include:
 
 **IP Spoofing (Masquerading)**: The specific ability to hand-craft a packet with an arbitrary source address to trick a receiver into believing the message orignated from a trusted source.
 
+## 1.7 History of Computer Networking and the Internet
+
+**Initial Theory**: Telephone network (circuit-switched) dominated, but computers needed *burst of traffic*.
+
+**ARPnet**: The precursor to the Internet, funded by US Defence Research Agwncy (ARPA).
+
+**Network Prolification**: New networks emrged, including **ALOHANet** (a microwave network in Hawaii), DARPA's packet-satellite and radio networks, and teh French **Cyclades**>
+
+**Kahn Principles**: 
+- **BEst-effort delivery**: No reliability guarantees at the network layer
+- **Stateless routers**: Routers do not maintain state for individual connections
+- **Decentralized control**: No global authority managing the network
+
+TCP/IP became official protocol for ARPNet on **Jan 1, 1983**, replacing older NCP.
+
+**Domain Name System (DNS)** was developed to manage hostnames.
+
+**Minitel** was a large-scale data network deployed in France, years before Internet became common.
+
+**The World Wide Web** invented by **Tim Bernerd-Lee**, introduced HTML, HTTP and Web servers/browsers.
+
+The Web was made accessible to non-technical-users by devopment of Mosaic browser (Netscape).
+
+Aggressive deployment of DSL, Cable, **Fiber-to-the-Home (FTTH)** replaces slower dial-up access.
+
+High speed WiFi and cellular data made it possible to stay connected.
+
+Companies like **Google and Microsoft** built private networks to bypass upper-tier ISPs and deliver content almost instantaneously to end users.
 
