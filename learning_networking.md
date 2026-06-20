@@ -1,4 +1,6 @@
-# Chapter 1
+# Computer Networking - A Top Down Approach
+
+# Chapter 1 - Computer Networks and The Internet
 ## 1.1 What is the internet?
 **End Systems / Hosts**: Devices connected to the internet, they sit at the edge of the Internet.
 
@@ -273,4 +275,6 @@ Aggressive deployment of DSL, Cable, **Fiber-to-the-Home (FTTH)** replaces slowe
 High speed WiFi and cellular data made it possible to stay connected.
 
 Companies like **Google and Microsoft** built private networks to bypass upper-tier ISPs and deliver content almost instantaneously to end users.
+---
 
+# Chapter 2 -
