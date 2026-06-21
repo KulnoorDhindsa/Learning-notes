@@ -277,4 +277,13 @@ High speed WiFi and cellular data made it possible to stay connected.
 Companies like **Google and Microsoft** built private networks to bypass upper-tier ISPs and deliver content almost instantaneously to end users.
 ---
 
-# Chapter 2 -
+# Chapter 2 - Application Layer
+**Application Architecture**: Designed by developer to define how the application is structured across different end systems
+
+Application Architecture is of mainly two types:
+1. **Client-Server Architecture**: A paradigm where always-on host (*server*) services requests from other hosts (*clients*).
+    - No direct communication amongst clients.
+    - Servers have **fixed IP address** 
+    - **Data Centers**: Large housing of hosts used to create powerful virtual server
+2. **Peer-to-Peer (P2P)**: A paradigm with no reliance on dedicated servers; pair of intermittently connected hosts (**peers**) communicate directly with each other.
+    - **self-scalable**: Peers are redistributors and consumers of bits.
