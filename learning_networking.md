@@ -287,3 +287,10 @@ Application Architecture is of mainly two types:
     - **Data Centers**: Large housing of hosts used to create powerful virtual server
 2. **Peer-to-Peer (P2P)**: A paradigm with no reliance on dedicated servers; pair of intermittently connected hosts (**peers**) communicate directly with each other.
     - **self-scalable**: Peers are redistributors and consumers of bits.
+
+Prcoesses communicate with each other across teh INternet via **messaging**. Sending process creates and sends *messages* while recieving process recieves and responds by sending messages back.
+
+In P2P file sharing, peer that downloads files is *client* ad peer uploading the files is *server*. So, same process can be a *client* and *server* too.
+
+In terms of communication session, the process that *intitiates* the communication is **client**, while the process waiting to be contacted is the **server**.
+
