@@ -287,10 +287,19 @@ Application Architecture is of mainly two types:
     - **Data Centers**: Large housing of hosts used to create powerful virtual server
 2. **Peer-to-Peer (P2P)**: A paradigm with no reliance on dedicated servers; pair of intermittently connected hosts (**peers**) communicate directly with each other.
     - **self-scalable**: Peers are redistributors and consumers of bits.
+3. **Hybrid Architecture**: Applications that combine both client-server and P2P elements (e.g. instant messaging using a server to track IP addresses but sending messages directly between users).
 
-Prcoesses communicate with each other across teh INternet via **messaging**. Sending process creates and sends *messages* while recieving process recieves and responds by sending messages back.
+**Process** is a program that runs inside an end system.
+
+Processes communicate with each other across teh INternet via **messaging**. Sending process creates and sends *messages* while recieving process recieves and responds by sending messages back.
 
 In P2P file sharing, peer that downloads files is *client* ad peer uploading the files is *server*. So, same process can be a *client* and *server* too.
 
-In terms of communication session, the process that *intitiates* the communication is **client**, while the process waiting to be contacted is the **server**.
+In terms of communication session, the process that *initiates* the communication is **client**, while the process waiting to be contacted is the **server**.
 
+**Socket**: A software interface through which process sends and recieves messages from the Internet.
+>Socket is interface between **applicatio layer** and **transport layer** within an end system.
+
+>Socket is **Application Programming Interface (API)** between application and network layer.
+
+**Addressing Processes**: To identify a recieving process, a sender must specify the **IP addredd** of the destination host and a **port number** that identifies the specific recieving process on that host.
