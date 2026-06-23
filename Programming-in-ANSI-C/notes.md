@@ -338,4 +338,93 @@ printf("%d is value stored at %u", x, *p);
 
 ---
 ## Functions
-
+---
+## Structures
+Structure (`struct`) is a user-defined data type where in we can have **different data types** under one name.
+>Array holds large amount of elements of same data type, struct helps us model real-world entity with mixed data.
+```c
+struct book 
+{
+    char title;
+    float price;
+    int pages;
+};
+```
+The above code defines the **type**, but nothing has been allocated in the memory yet.
+### Declaring Structures
+```c
+struct book
+{
+    char title;
+    float price;
+};
+struct book b1={"Treasure Island", 500.00}; //declaration and initialisation
+struct book b2; //only declares, no initialisation
+```
+### Accessing Members
+**Dot Operator(`.`)** for direct variables
+```c
+b2.title="Pride and Prejudice";
+b2.price=800.00;
+```
+### Memory Layout
+Members of `struct` are stored in **declared order**, continuously.
+>Compiler may insert **padding bytes** between members to satisfy alignment requirements.
+```c
+struct book
+{
+    char title; // 1 byte
+                // padding 3 byte
+    int pages; // 4 byte
+    float price; // 2 byte
+                 // padding 2 byte
+};
+//since largest byte size is 4, padding of 3 byte and 2 byte is added to title and price respectively to align struct size
+// sizeof(struct Example) = 12
+```
+### Passing Values
+```c
+void main()
+{
+    struct book
+    {
+        char title;
+        float price;
+    };
+    struct book b1={"20,000 Leagues Under the Sea", 250.00}
+    Printing_Struct(b1.title, b1.price);
+}
+void Printing_Struct(char x, float y)
+{
+    printf("\n%c of price %f", x, y);
+}
+```
+### Nested Structures
+```c
+struct date_log
+{
+    int year;
+    int month;
+    int day;
+};
+struct Person
+{
+    char name[5];
+    struct date_log birthday;
+};
+struct Person p1={"Sam", 2003, 12, 25};
+printf("\n %c has his birthday on %d/%d/%d", Person.name, Person.date_log.day, Person.date_log.month, Person.date_log.year);
+```
+### Arrays of Structure
+```c
+struct Coordinates
+{
+    int x;
+    int y;
+}
+struct Coordinates[2]={{0,0}, {1,0}};
+for (int i=0; i<2>, i++)
+{
+    printf("\n(%d, %d)", Coordinates[i].x, coordinates[i].y);
+}
+```
