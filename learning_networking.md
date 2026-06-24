@@ -303,3 +303,24 @@ In terms of communication session, the process that *initiates* the communicatio
 >Socket is **Application Programming Interface (API)** between application and network layer.
 
 **Addressing Processes**: To identify a recieving process, a sender must specify the **IP addredd** of the destination host and a **port number** that identifies the specific recieving process on that host.
+
+Different services provided by *Transport Layer Protocol* to applications that invoke it include:
+1. *Reliable Data Transfer: Transport Layer Protocol allows reliable data transfer with *no packet loss (due to over flowing buffer or packet being discarded owing to errors)
+    - Certain *loss tolerant applications* don't mind packet loss (e.g. multimedia applications involving audio/video)
+2. *Throughput*: Transport Layer Protocol would ensure that available throughput is always atleast a minimum amount requested by the application.
+    - *Bandwidth-sensitive Applications*: Applications that require a minimum amount of throughput to be effective (e.g. Interent telephony)
+    - *Elastic Applications*: Applicaitons that can use as much as or as little throughput as is available (e.g. e-mail, file tranfer)
+3. *Timing*: Transport Layer Protocol provides timing guarantees to avoid unnatural pauses in conversations or long delays in action and required result.
+4. *Security*: Transport Layer Protocol provided various security services to end systems including encryption and decryption in sending and recieving hosts.
+
+### TCP Services
+1. *Connection-oriented Service*: 
+    - Handshaking Phase: Before application-level messages begin to flow, TCP has client and server exchange transport layer control information to alert the client and server for packet transfer.
+
+>No encryption is provided by TCP or UDP. Data passes through un-encrypted thus allowing potential sniffing or intervention at different links between sender and reciever.
+
+>*Secure Socket Layers (SSL)* is a TCP enhancement that provides process-to-process security like encryption and end-point authentication while providing usual TCP services as well.
+>>When applications use SSL, cleartext is is sent to SSL socket; SSL encrypts the data and sends it to TCP socket. This data travel via the Internet to the socket of recieving end system, where SSL decrypts the data.
+
+2. *Reliable Data Transfer Service*: TCP guarantees for same stream of bytes to reach receiving socket as it left the sending socket.
+3. *Congestion Control Mechanism*: Throttles sending prcoess when network is congested and limits each TCP to specified bandwidth.
