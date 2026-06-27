@@ -375,9 +375,9 @@ struct book
 {
     char title; // 1 byte
                 // padding 3 byte
-    int pages; // 4 byte
-    float price; // 2 byte
-                 // padding 2 byte
+    int pages; // 2 byte
+               // padding of 2 byte
+    float price; // 4 byte
 };
 //since largest byte size is 4, padding of 3 byte and 2 byte is added to title and price respectively to align struct size
 // sizeof(struct Example) = 12

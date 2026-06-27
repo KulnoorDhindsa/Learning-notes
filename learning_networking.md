@@ -348,3 +348,11 @@ Different services provided by *Transport Layer Protocol* to applications that i
 Applicaition Layer Protocol is piece of network application.
 - *Web* is client-server application allowing users to obtain documents from Web servers by usinf *HTTP*, Web's application-layer protocol which defines the format and sequence of messages exchanged between browser and Web server.
 - *e-mail* application has many componenets, of which *SMTP* is its main application layer protocol.
+
+### The Web and HTTP
+**Web Pages**: Collections of *objects*, such as HTML files, JPEG images or video clips.
+
+*Object*: File that is addressable by single **URL**
+
+**Uniform Resource Locator(URL)**: Consists of two components, hostname of the server hosting the object and the object's pathname
+
