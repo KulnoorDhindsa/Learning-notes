@@ -356,3 +356,36 @@ Applicaition Layer Protocol is piece of network application.
 
 **Uniform Resource Locator(URL)**: Consists of two components, hostname of the server hosting the object and the object's pathname
 
+**Hyper Text Transfer Protocol(HTTP)**: Web's application-layer protocol that defines how clients request Web pages and how servers transfer them.
+
+>Web browsers implement client side of HTTP.
+
+>Web servers implement server side of HTTP.
+
+**Stateless Protocol**: HTTP is considered stateless because the server maintains **no information** about the clients; if a client requests the same object twice, the server simply sends it again.
+
+### Non-Persistent and Persistent Connections
+1. **Non-Persistent Connections**: A mode where each request/response pair is sent over a **seperate TCP connection**.
+    - Connection does not persist for other objects
+    - Each TCP connection transports one request and one response message before terminating the TCP connection
+    - Multiple TCP connections are made for request and response of each object
+
+**Round-Trip Time(RTT)**: Tome takes for packet to go from client to server and back to client.
+- Includes packet-propagation delays, queuing delays and packet-processing delays.
+
+**Three-Way Handshake**: The process of establishinh a TCP connection, which takes one RTT before the actual request is sent.
+>Three-Way Handshake: 
+```
+1. Client sends a TCP segment to the server  
+
+2. Server acknowledges and responds with TCP segment
+
+3. Client acknowledges back to server
+```
+>1 RTT - first two steps of the handshake. 2nd RTT - after the handshake, server sends the HTML file into TCP connection.
+
+2. **Persistent Connections**: Mode where all requests and responses are sent over **same TCP connection**.
+    - Server leaves TCP connection open after sending a response
+
+>By default, HTTP uses persistent connections, but can be configured to use non-persistent connections.
+
