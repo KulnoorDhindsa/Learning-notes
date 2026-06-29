@@ -389,3 +389,8 @@ Applicaition Layer Protocol is piece of network application.
 
 >By default, HTTP uses persistent connections, but can be configured to use non-persistent connections.
 
+### HTTP Request Message Structure
+1. **Request Line (The Top Line)**: This has 3 fields:
+    - **Method**: Common methods include **GET** (requesting an object), **POST** (sending data, like in form inputs), **HEAD** (requesting only headers) and **Delete**
+    - **URL**: The path to the specific object being requested
+    - **Version**: The specific protocol verson the client is using
