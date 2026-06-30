@@ -390,7 +390,44 @@ Applicaition Layer Protocol is piece of network application.
 >By default, HTTP uses persistent connections, but can be configured to use non-persistent connections.
 
 ### HTTP Request Message Structure
-1. **Request Line (The Top Line)**: This has 3 fields:
-    - **Method**: Common methods include **GET** (requesting an object), **POST** (sending data, like in form inputs), **HEAD** (requesting only headers) and **Delete**
-    - **URL**: The path to the specific object being requested
-    - **Version**: The specific protocol verson the client is using
+>HTTP uses **TCP** as underlying protocl, ensuring messages arrive intact.
+
+HTTP messages are written in ordinary **ASCII text** and a fixed structure for request and response.
+
+1. **HTTP Request Message Structure**
+    - **Request Line**: Top line in structure; has 3 fields:
+        - **Method**: **GET** (requests objects), **POST** (sends data like form inputs), **HEAD** (requests only headers, leaving out objects), **PUT** (uploads files) and **DELETE**
+        - **URL (uniform resource locator)**: The path to the specific object being requested
+        - **Version**: The specific protocl version the cliet is using (e.g. HTTP)
+    - **Header Lines**: Provide metadata about the request; e.g:
+        - `Host`: Specifies the server address where object resides
+        - `User-agent`: Identifies the browser type (e.g. Chrome) making the request
+        - `Connection`: The user's preferred language (e.g. English)
+        - `Accept-language`: The user's preferred language (e.g. English)
+    - **Blank Line**: A mandatory empty line (marked by a carriage return and line feed) seperating the headers from the body
+    - **Entity Body**: This section is empty for GET requests but contains data (like form field values) for POST request.
+2. **HTTP Response Message Structure**
+    - **Status Line**: Top line in structure; contains **Protocol Version** , **Status Code** and **Status Message**
+        - **Common Status Code**:
+            - `200 OK`: The request succeeded and object is returned 
+            - `301 Moved Permanently`: The object has a new URL
+            - `404 Not Found`: The requested document does not exist on the server
+            - `505 HTTP Version Not Supported`:The server doesn't support the requested version
+        - **Header Lines**: Metadata about the server and the returned object
+            - `Date`: When the response was created
+            - `Source`: The type of server software (e.g. Apache)
+            - `Last-modified`: When the object was last changed (crucial for Web caching)
+            - `Content-Length`: The size of the object in bytes
+            - `Content-Type`: The type of object in the body (e.g. text/html)
+        - **Blank Line**: Seperates the header lines from the data
+        - **Entity Line**: Bottom line; contains **requested data** (e.g. HTML code or image or audio file)
+
+### Cookies: User-Server Interaction
+**Cookies**: A techonology used to keep track of user state; has four components:
+1. A cookie header line in HTTP response
+2. A cookie header lines in the HTTP request
+3. A cookie file managed bu user's browser
+4. A back-end database at the Web site
+
+
+
