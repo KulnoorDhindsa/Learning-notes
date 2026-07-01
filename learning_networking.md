@@ -413,21 +413,64 @@ HTTP messages are written in ordinary **ASCII text** and a fixed structure for r
             - `301 Moved Permanently`: The object has a new URL
             - `404 Not Found`: The requested document does not exist on the server
             - `505 HTTP Version Not Supported`:The server doesn't support the requested version
-        - **Header Lines**: Metadata about the server and the returned object
-            - `Date`: When the response was created
-            - `Source`: The type of server software (e.g. Apache)
-            - `Last-modified`: When the object was last changed (crucial for Web caching)
-            - `Content-Length`: The size of the object in bytes
-            - `Content-Type`: The type of object in the body (e.g. text/html)
-        - **Blank Line**: Seperates the header lines from the data
-        - **Entity Line**: Bottom line; contains **requested data** (e.g. HTML code or image or audio file)
+    - **Header Lines**: Metadata about the server and the returned object
+        - `Date`: When the response was created
+        - `Source`: The type of server software (e.g. Apache)
+        - `Last-modified`: When the object was last changed (crucial for Web caching)
+        - `Content-Length`: The size of the object in bytes
+        - `Content-Type`: The type of object in the body (e.g. text/html)
+    - **Blank Line**: Seperates the header lines from the data
+    - **Entity Line**: Bottom line; contains **requested data** (e.g. HTML code or image or audio file)
 
 ### Cookies: User-Server Interaction
-**Cookies**: A techonology used to keep track of user state; has four components:
-1. A cookie header line in HTTP response
-2. A cookie header lines in the HTTP request
-3. A cookie file managed bu user's browser
-4. A back-end database at the Web site
+**Cookies**: A techonology that allows websites to *identify users* and *track* their activites (since HTTP is **stateless** protocol)
+
+1. **A cookie header line** in HTTP **response** message (e.g. `Set-cookie: 1678`)
+2. **A cookie header line** in the HTTP **request** message (e.g. `Cookie: 1678`)
+3. **A cookie file** kept on user's end system and managed by user's browser
+4. **A back-end database** at the web site to store user-specific information
+
+How cookies work:
+1. When user visits a site for the first time, server creates **unique identification number** along with an entry in its back-end database using that number
+2. Server responds to browser with a message containing `Set-cookie:` header and unique ID
+3. Browser then makes a line in local cookie file including **server's hostname** and the ID
+4. When user visits the site again and requests a page, browser automatically extracts the ID from cookie file and includes it in the `Cookie:` header in HTTP request.
+5. Server receives the ID and tracks the pages, at what time and their exact order the user visited 
+
+Cookies are used in:
+- **online shopping carts** to keep track of all items, allowing a collective purchase at the end of the session
+- **personalizing requests**, based on the pages viewed by user before
+- **associating name, password, card details to cookie ID**, thus not requiring to re-enter information.
+
+>By combining cookies with user-supplied information like name, e-mail, card details, a complete user profile can be made and be sold to third parties as well.
+
+### Web Caching
+**Web Cache / Proxy Server**: A network that tries to satisfy HTTP requests on behalf of the origin server.
+
+>Cache is server for the browser (sends request and recieves response from browser) and client for the origin server (sends request to and recieves response from orign server).
+
+How it works:
+1. **Request Redirection**: The browser establishes a TCP connection to the Web cache and sends HTTP request there
+2. **Checking**
+    - If cache has local copy of requested object, it returns it within an HTTP response
+    - If cache has no local copy of requested object, as a client, establishes a seperate TCP connection with origin server
+3. After recieving object from origin server, cache stores a copy in local storage and forwards a copy to browser
+
+A web cache
+- **reduces response time** for requests
+- **reduce traffic** on access links bought by *local ISP* or *institutions*
+
+**Hit Rate**: The fraction of requests satisfied directly by a cache
+
+**CDNs (Content Distribution Networks)**: Companies that install many geographically distributed caches to localize traffic
+
+### The Conditional GET
+**Conditional GET**: A mechanism that allows a cache to verify if locally copied object has any modifications in the origin server
+
+- **The Request**: The cache sends a request to the origin server including `If-Modified-Since:` header containing the date object was last cached.
+- **The Response**: 
+    - If object has **not** been modified since, server returns **304 Not Modified** response
+    - If object **has** been modifed, server returns updated version in "200 OK" response
 
 
 
