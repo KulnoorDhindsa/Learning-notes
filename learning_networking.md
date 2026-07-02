@@ -509,3 +509,27 @@ FTP replies are from *server to client*; each command get a reply; *3-digit numb
 - `125` Data Connection already open; transfer starting
 - `425` Can't open data connnection
 - `452` error writing file
+
+## Simple Mail Transfer Protocol: SMTP
+Electronic mail has 3 main components:
+1. **User Agents**: These allow users to *read*, *reply*, *forward* and *compose* messages (e.g. Microsoft Outlook, Apple Mail or web-based interfaces like Gmail)
+
+2. **Mail Services**: Manages an **outgoing message queue** for mail being sent
+    - core of e-mail infrastructure
+    - each recipient has **mailbox**
+
+3. **SMPT**: Uses reliable data transfer to transfer mail from sender's mail server to recipient's server
+    - Runs on both client and reciever server
+
+### SMTP: The PUSH Protocol
+SMPT defines how mail servers speak to each other to transfer messages
+
+**The Process**: Invloces a three-phase transfer: **Handshaking, Transfer of messages** and **Closure**
+
+**Push Protocol**: SMPT is primarily a **push protocol**, the sending mail server initiates the connection to "push" the file to the reciever.
+
+**Direct Transfer**: Unlike some other protocols, SMPT does not use intermediate mail servers; the connection is a direct TCP link between the sender's and recipient's servers
+
+**ASCII Command/Reply**: SMPT uses 7-bit ASCII for its commands (e.g. `Hello`, `MAIL FROM`, `RCPT TO`, `DATE`, `QUIT`) and status replies (e.g. `250 OK`, `354 Intermediate response`)
+
+### SMTP vs HTTP
