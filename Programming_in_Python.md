@@ -9,23 +9,42 @@
 |`-`|Subtraction|
 |`+`|Addition|
 |`=`|Assignment from left to right|
-|`==`|Equal to|
 
 **Precedence of Operators**:
 `**` > `*` > `/` > `//` > `%` > `+` > `-`
 >() are evaluated before any operation.
 
-## Data Types
-|Data Type|Examples|
-|---------|--------|
-|Integers (`int`)|-2, 0, +1|
-|Floating-point (`float`)|0.24, -8.9|
-|Strings (`str`)|'apple', 'gello','2 cakes', ' ' (blank string)|
+## Comparison Operators
+|Operator|Operation|
+|-------|--------|
+|`==`|Equal to|
+|`!=`|Not equal to|
+|`<`|Less than|
+|`>`|Greater than|
+|`<=`|Less than or equal to|
+|`>=`|Greater than equal to|
 
+## Boolean Operators
+|Operator|Operations|
+|-------|---------|
+|`and`|Returns true if both conditions are true|
+|`or`|Returns true if either of the two entered conditions is true|
+|`not`|Returns true if neither of the two entered conditions is true|
+
+## Data Types
+|Data Type|What it contains|Examples|
+|---------|--------|----------|
+|Integers (`int`)|All integer values|-2, 0, +1|
+|Floating-point (`float`)|All values contaning decimal point `.`|0.24, -8.9|
+|Strings (`str`)|Sequence of characters within `''` or `""`|'apple', 'gello','2 cakes', ' ' (blank string)|
+|Boolean|Contains only two values|`True` and `False`|
+
+Input:
 ```python
 print('Stacey'+'Millers')
 print('Stacey','Millers')
 ```
+Output:
 ```python
 StaceyMillers
 Stacey Millers
