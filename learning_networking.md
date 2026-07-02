@@ -313,7 +313,7 @@ Different services provided by *Transport Layer Protocol* to applications that i
 3. *Timing*: Transport Layer Protocol provides timing guarantees to avoid unnatural pauses in conversations or long delays in action and required result.
 4. *Security*: Transport Layer Protocol provided various security services to end systems including encryption and decryption in sending and recieving hosts.
 
-### TCP Services
+## TCP Services
 1. *Connection-oriented Service*: 
     - Handshaking Phase: Before application-level messages begin to flow, TCP has client and server exchange transport layer control information to alert the client and server for packet transfer.
 
@@ -325,7 +325,7 @@ Different services provided by *Transport Layer Protocol* to applications that i
 2. *Reliable Data Transfer Service*: TCP guarantees for same stream of bytes to reach receiving socket as it left the sending socket.
 3. *Congestion Control Mechanism*: Throttles sending prcoess when network is congested and limits each TCP to specified bandwidth.
 
-### UDP Services
+## UDP Services
 - *Connectionless* so no handshake before two processes start communicating.
 - No guarantee that messages will reach receiving process, if in order.
 - No congestion control mechanism
@@ -342,14 +342,14 @@ Different services provided by *Transport Layer Protocol* to applications that i
 >Internet Telephony applications can often cope with some loss but require minimal rate, UDP is sometimes prefered over TCP.
 >>Most firewalls are configured to block most UDP, Internet Telephony applications often designed to use TCP as backup.
 
-### Application Layer Protocols
+## Application Layer Protocols
 *Application Layer Protocols* define *type, **syntax, **meaning of information in fields* and *rules* of messages sent among application processes running on different end-systems.
 
 Applicaition Layer Protocol is piece of network application.
 - *Web* is client-server application allowing users to obtain documents from Web servers by usinf *HTTP*, Web's application-layer protocol which defines the format and sequence of messages exchanged between browser and Web server.
 - *e-mail* application has many componenets, of which *SMTP* is its main application layer protocol.
 
-### The Web and HTTP
+## The Web and HTTP
 **Web Pages**: Collections of *objects*, such as HTML files, JPEG images or video clips.
 
 *Object*: File that is addressable by single **URL**
@@ -364,7 +364,7 @@ Applicaition Layer Protocol is piece of network application.
 
 **Stateless Protocol**: HTTP is considered stateless because the server maintains **no information** about the clients; if a client requests the same object twice, the server simply sends it again.
 
-### Non-Persistent and Persistent Connections
+## Non-Persistent and Persistent Connections
 1. **Non-Persistent Connections**: A mode where each request/response pair is sent over a **seperate TCP connection**.
     - Connection does not persist for other objects
     - Each TCP connection transports one request and one response message before terminating the TCP connection
@@ -389,7 +389,7 @@ Applicaition Layer Protocol is piece of network application.
 
 >By default, HTTP uses persistent connections, but can be configured to use non-persistent connections.
 
-### HTTP Request Message Structure
+## HTTP Request Message Structure
 >HTTP uses **TCP** as underlying protocl, ensuring messages arrive intact.
 
 HTTP messages are written in ordinary **ASCII text** and a fixed structure for request and response.
@@ -422,7 +422,7 @@ HTTP messages are written in ordinary **ASCII text** and a fixed structure for r
     - **Blank Line**: Seperates the header lines from the data
     - **Entity Line**: Bottom line; contains **requested data** (e.g. HTML code or image or audio file)
 
-### Cookies: User-Server Interaction
+## Cookies: User-Server Interaction
 **Cookies**: A techonology that allows websites to *identify users* and *track* their activites (since HTTP is **stateless** protocol)
 
 1. **A cookie header line** in HTTP **response** message (e.g. `Set-cookie: 1678`)
@@ -444,7 +444,7 @@ Cookies are used in:
 
 >By combining cookies with user-supplied information like name, e-mail, card details, a complete user profile can be made and be sold to third parties as well.
 
-### Web Caching
+## Web Caching
 **Web Cache / Proxy Server**: A network that tries to satisfy HTTP requests on behalf of the origin server.
 
 >Cache is server for the browser (sends request and recieves response from browser) and client for the origin server (sends request to and recieves response from orign server).
@@ -464,7 +464,7 @@ A web cache
 
 **CDNs (Content Distribution Networks)**: Companies that install many geographically distributed caches to localize traffic
 
-### The Conditional GET
+## The Conditional GET
 **Conditional GET**: A mechanism that allows a cache to verify if locally copied object has any modifications in the origin server
 
 - **The Request**: The cache sends a request to the origin server including `If-Modified-Since:` header containing the date object was last cached.
@@ -472,5 +472,40 @@ A web cache
     - If object has **not** been modified since, server returns **304 Not Modified** response
     - If object **has** been modifed, server returns updated version in "200 OK" response
 
+## File Transfer: FTP
+HTTP and FTP are both file transfer protocols of the application layer.
 
+>Both run on TCP, however FTP has unique architectural approach.
 
+### Overview of FTP
+- Allows a user to transfer files to or from a remote account
+- **Authentication**: Requires user to provide a **user identification and password** to access the remote account
+- **User Interface**: The user interacts with FTP though an 
+**FTP user agent**, which communicates with the remote FTP server
+
+### The two-Connection Architecture
+FTP's unique architectural structure is **two parallel TCP connections** used to transfer a single file
+1. **Control Connection (Port 21)**: Used for sending *control information* like user ID, passwords and commands to change directories or *put* (store) and *get* (retrieve) files
+    - >Persistent (single Control Connection remains open for entirity of user's session)
+2. **Data Connection (Port 20)**: Used specifically for the actual transfer of file data
+    - >Non-Persistent (one Data Connection is for one file transferred within a session)
+
+**Out-of-Band Signaling**: FTP uses seperate connection for control information, it sends control information **out-of-band**
+
+**In-Band Signaling**: HTTP sends request and response headers in the same TCP connection used for file data, making it signal **in-band**.
+
+**Statefulness**: FTP servers **maintain state** about the user by *tracking* user's current directory and previous authentication
+
+### FTP Commands 
+FTP commands are from *client to server*; written in **7-bit ASCII** format; *4 uppercase ASCII characters* with *optional arguments*; `[]` means optional
+- `USER [username]`: Sends the user ID to server
+- `PASS [password]`: Sends the user password
+- `LIST`: Asks the server to send back a list of all files in the current remote directory (this list is sent ovver a *data connection*)
+- `RETR [filename]`: Used to retrieve (download) a file
+- `STOR [filename]`: Used to store (upload) a file to the remote host
+### FTP Replies
+FTP replies are from *server to client*; each command get a reply; *3-digit number* with *optional message*
+- `331` Username OK, password required
+- `125` Data Connection already open; transfer starting
+- `425` Can't open data connnection
+- `452` error writing file
