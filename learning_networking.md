@@ -533,3 +533,21 @@ SMPT defines how mail servers speak to each other to transfer messages
 **ASCII Command/Reply**: SMPT uses 7-bit ASCII for its commands (e.g. `Hello`, `MAIL FROM`, `RCPT TO`, `DATE`, `QUIT`) and status replies (e.g. `250 OK`, `354 Intermediate response`)
 
 ### SMTP vs HTTP
+Both protocols transfer files over TCP, but
+|HTTP|SMTP|
+|----|----|
+|**Pull Protocol**: Client sends request for pages already uploaded onto the server|**Push Protocol**: Sending mail server pushes file to recieving mail server|
+|TCP connection made by machine wanting to *recieve* the file |TCP connection initiated by machine wanting to *send* the file|
+|HTTP has no constrictoin|SMTP requires only **7-bit ASCII** format|
+|HTTP encapsulates each object in own response message|SMPT places all of message's objects into a single **single message**|
+
+### Mail Merge Format and Access Protocols
+**Mail Merge Format**: Format of actual message inside SMTP envelope; includes **header lines** (e.g. `To:`, `From:`, `Subject:`) followed by **message body** seperated by a blank line
+
+**Mail Access Protocols**: Because SMTP is a *push* protocol, it can't be user agent to "pull" messages from a server. Specific protocols include:
+1. **POP3 (Post Office Protocol - Version 3)**: A simple "pull" protocol.
+    - Operates in **download-and-delete** or **download-and-keep** modes
+    - It is **stateless**
+2. **IMAP (Internet Mail Access Protocol)**: Allows user to create folders on servers and organize messages
+    - It **maintains state** accross sessions
+3. **HTTP**: Users using web-based email(Gmail, Yahoo Mail) have user agents as web browser and the transfer between the browser and the mail server happens via **HTTP**
