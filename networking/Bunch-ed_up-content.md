@@ -548,6 +548,7 @@ Both protocols transfer files over TCP, but
 1. **POP3 (Post Office Protocol - Version 3)**: A simple "pull" protocol.
     - Operates in **download-and-delete** or **download-and-keep** modes
     - It is **stateless**
-2. **IMAP (Internet Mail Access Protocol)**: Allows user to create folders on servers and organize messages
+2. **IMAP (Internet Mail Access Protocol)**: Allows user to create folders on servers and organize messages (move messages, delete messages etc)
     - It **maintains state** accross sessions
+    - Allows user to obtain **part of the message** sent. When a low-bandwidth connection is there between user agent and mail server, viewing the contents instead of the attached file (which would take time to download) conveys the message as well
 3. **HTTP**: Users using web-based email(Gmail, Yahoo Mail) have user agents as web browser and the transfer between the browser and the mail server happens via **HTTP**
