@@ -12,14 +12,16 @@ DNS is application-layer protocol running iver **UDP** on **port 53**
 DNS is **distributed, hierarchial database** because a single, centralized server would not scale to the size of the modern Internet.
 - **The Hierarchy**:
     - **Root DNS Servers**: There are 13 root servers (clusters of replicated servers) that provide the IP addresses of TLD servers
-    - **Top-Level Domain (TLD) Servers**: These are responsible for domains like `.com`, `.org`, `.edu` and country domains like `.uk` and `.fr`.
-    - **Authoritative DNS Servers**: These house the actual DNS records that mao an organization's hostname to IP addresses
-- **Local DNS Servers**: While not strictly part of the hierarchy, these act as proxy for hosts, forwarding the queries into the hierarchy to resolve addresses
-- **Query Types**: Queries can be **recursive** (asking a server to  obtain the mapping on the client's behalf) or **iterative** (the server returns the address of the next server in the chain for the client to contact)
+    - **Top-Level Domain (TLD) Servers**: These are responsible for generic domains like `.com`, `.org`, `.edu` and country domains like `.uk` and `.fr`.
+    - **Authoritative DNS Servers**: These house the actual DNS records that contain an organization's hostname to IP addresses
+- **Local DNS Servers**: While not strictly part of the hierarchy, these act as proxy for hosts (provided by ISPs), forwarding the queries into the hierarchy to resolve addresses
+- **Query Types**: Queries can be **recursive** (client requests server to find the answer itself) or **iterative** (the server returns the address (as a referral) of the next server in the chain for the client to contact rather than giving final answer)
 - **DNS Caching**: To improve performance and reduce traffic, DNS servers cache mappings they recieve; these are usually discarded after couple of days
 
+>**DNS Poisoning**: A security attack where an attacker sends bogus records to a DNS server to trick into caching false information.
+
 ## DNS Records and Messages
-The database stores **Resource Records (RRs)**, which are four-tuples containing: `(Name, Value, Type, TTL)`.
+The database stores **Resource Records (RRs)** (basic unit of information), which are four-tuples containing: `(Name, Value, Type, TTL)`.
 - **Type A**: Name is a hostname, Value is its IP address
 - **Type NS**: Name is a domain, Value is the hostname of an authoritative server for that domain
 - **Type CNAME**: Name is an alias, Valuse is the canonical hostname
