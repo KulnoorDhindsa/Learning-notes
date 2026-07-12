@@ -27,6 +27,13 @@
     - *simplex mode*: one-way communication (e.g. keyboard, mouse)
     - *half-duplex mode*: two-way communication but not at same time (e.g. walkie talkie)
     - *full-duplex mode* / *duplex*: two communication at any time (e.g. mobile phone)
+### Data Link Layer
+- **node-to-node delivery**
+- Divides stream of bits into manageable data units called **frames**
+- Adds *headers* to frames to define the **physical address** of source address and reciever's address
+- If rate of absoroption of data by reciever is less than rate of data being sent by the sender, data link layer has *flow control mechanism* to not over exert recieving system
+- Adds **trailers** for *reliability* (not to loose bits, prevents duplication of bits)
+- Determines which devices have control of link when multiple devices are connected to the same link
 
 >**P**lease **D**o **N**ot **T**ouch **S**teve's **P**et **A**lligator
 
