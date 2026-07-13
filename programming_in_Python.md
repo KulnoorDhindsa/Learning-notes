@@ -65,19 +65,6 @@ Stacey Millers
 
 >By default, user input entered for `input` function, is treated as a *string*.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 ## Format Strings (F Strings)
 ```python
 print(2300)
