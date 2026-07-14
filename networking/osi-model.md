@@ -28,13 +28,41 @@
     - *half-duplex mode*: two-way communication but not at same time (e.g. walkie talkie)
     - *full-duplex mode* / *duplex*: two communication at any time (e.g. mobile phone)
 ### Data Link Layer
-- **node-to-node delivery**
+- **node-to-node delivery**, responsible for transfer of data over a *single network*
 - Divides stream of bits into manageable data units called **frames**
 - Adds *headers* to frames to define the **physical address** of source address and reciever's address
-- If rate of absoroption of data by reciever is less than rate of data being sent by the sender, data link layer has *flow control mechanism* to not over exert recieving system
+- Has *flow control* mechanism over the *entire network* where, rate of absoroption of data by reciever is less than rate of data being sent by the sender, so as to not over exert recieving system
 - Adds **trailers** for *reliability* (not to loose bits, prevents duplication of bits)
 - Determines which devices have control of link when multiple devices are connected to the same link
+### Network Layer
+- Responsible for transfer of individual bits across *different networks* (links) or *internetworks*
+- For bits travelling through *internetworks*, network layer adds **headers** for logical addressing
+- Provides connection in *internetworks* (like routers and gateways do)
+### Transport Layer
+- Responsible for transfer of *entire message* from **source-to-destination**
+- Accounts for *realation* between sent packets
+- Provides **service-point address** or **port address** in its *header*, so that packets are sent from an application on sender end-system, safely to another application on the reciever end-system
+>Network layer gets each packet to correct end system, transport layer gets entire message to correct application of that system.
+- Message is divided into tranferable *segments* with *sequence numbers* to re-assemble the packets and request for lost packets from sender on arrival
+- Connections
+    - **Connection Oriented Transport Layer**: Generates a connection between sender and reciever, and after transfer of all segments, terminates the connection
+    - **Connectionless Transport Layer**: Treates each *segment* as individual message that it transports from sender end-system application to reciever end-system application
+- End-to-End *flow control* mechanism
+- End -to-End *error control* mechanism, where error (damage, delay or duplication) correction is done by **re-transmission**
+### Session Layer
+- Synchronises interaction between communicating end-systems
+- Allows **dialog control**, where *half-duplex* or *full duplex* mode of communication is established between end-systems
+- Adds **check-points** (*synchronisation checkpoints*) for large data transfers (e.g. re-transmission from page 501 is better than re-transmission of 1 to 501 pages in a book)
+### Presentation Layer
+- Responsible for syntax of information exhanges between end-systems
+- Presentation layer at sending machine, *translates* information into common bit stream format. Presentation layer at recieving machine converts common format into reciever dependednt format
+- Allows **encryption** and **decryption** of information
+- Allows **data compression** of text, audio, video etc to allow less bits to be transmitted
+### Application Layer
+- Allows acces to the network
+- Creates **virtual network terminal** for user's end system to talk to the software terminal
+- Via FTP, HTTP etc, it allows access, retrieval and modifications of files online on servers
+- Allows Mail service (via SMTP and access protocols like IMAP )
+- Allows directory service (via DNS)
 
 >**P**lease **D**o **N**ot **T**ouch **S**teve's **P**et **A**lligator
-
-
