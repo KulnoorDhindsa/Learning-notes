@@ -38,6 +38,7 @@ if n==0:
     print(n, "is zero!")
 ```
 - In above code, all 3 conditions are checked, regardless if one holds `True` or `False`.
+---
 # Looping Statements (Iteration)
 ## `while` loop
 - Block of code is executed over and over again untill a certain condiiton holds true
@@ -75,6 +76,7 @@ for i in range(x,y,z)
 ```
 - `i` starts from x, goes uptill `y-1` (1 less than upper limit of range) by intervals of `z`
 > `z` can be positive or negative.
+---
 # Loop Control Keywords (Jumping)
 ## `break` statements
 - Used *inside* loops

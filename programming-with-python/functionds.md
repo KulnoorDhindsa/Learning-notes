@@ -14,6 +14,7 @@ main()
 - A function `sum` which will take *arguments* stored in *parameters* `x` and `y` from `main` has been defined and called later in `main` function by the command `sum(n1,n2)`
 - `main()` calls the `main` function defined above
 >Value stored in parameters is forgotten as soon as function ends; so same parameters can be used in multiple functions.
+---
 ## Return Values
 - The value that a called function evaluates to is *return value*.
 ```python
@@ -28,4 +29,22 @@ main()
 >Value stored by `name` variable in `ask_name` function ends as soon as `ask_name` funciton ends, thus `name` variable can be used in other functions as well.
 - This is usefull when the *return value* is to be used further down the code and not just to be printed on the screen
 - *return statements* return the *return values*, which is then stored by equating the called function to a variable, and can be used further down the code.
+---
 ## Local and Global Scope
+**Local Scope**: Parameteres and variables assigned in a called function exist in that function's *local scope*.
+- Local Scope is destroyed when called function ends; valus stored by local variables is lost.
+- Local Scopes **can't** use variables form other local scopes.
+
+**Global Scope**: Variables assigned outside all the functions are in *global scope*.
+- Global Scope is destroyed at the end of the programme; all globals variables lose their values.
+>Local scope can access global variables but not vica versa.
+```python
+def veg_list():
+    l2='apples'
+    l3='pears'
+    l4='grapes'
+l3='blue berries'
+veg_list()
+print(l3)
+```
+- `print(l3)` prints `pears` as, the `veg_list` is declared first, but called **after** `l3='blue berries'`, so any changes made to *global variable* `l3`
