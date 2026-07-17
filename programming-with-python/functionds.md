@@ -35,6 +35,8 @@ main()
 - Local Scope is destroyed when called function ends; valus stored by local variables is lost.
 - Local Scopes **can't** use variables form other local scopes.
 
+>A local variable has to be assigned a value first before using it.
+
 **Global Scope**: Variables assigned outside all the functions are in *global scope*.
 - Global Scope is destroyed at the end of the programme; all globals variables lose their values.
 >Local scope can access global variables but not vica versa.
@@ -48,3 +50,27 @@ veg_list()
 print(l3)
 ```
 - `print(l3)` prints `pears` as, the `veg_list` is declared first, but called **after** `l3='blue berries'`, so any changes made to *global variable* `l3`
+
+>To modify value stored in global variable, a global statement has to be made.
+---
+## `try` and `except`
+```python
+def div(x):
+    return 20/x
+print(div(1))
+print(div(2))
+print(div(0))
+print(div(5))
+```
+- Above code shows error when `print(div(0))` runs and shows `ZeroDivisionError`.
+```python
+def div(x):
+    try:
+        return 20/x
+    except ZeroDivisionError:
+        print("Error: Invalid Argument")
+print(div(1))
+print(div(2))
+print(div(0))
+print(div(5))
+```
