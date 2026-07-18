@@ -50,6 +50,16 @@ while i<=n:
     print(i, end=' ')
     i+=1
 ```
+>To run a loop infinite amount of times, and stop only when user types something specific:
+```python
+friends_names=[]
+while True:
+    print("Enter friend's names, and nothing() to stop:")
+    name=input()
+    if name=="":
+        break
+    friends_names+=[name] #concatenation
+```
 ## `for` loop
 - Executes block of code for a *fixed* number of times
 ```python
