@@ -46,3 +46,59 @@ for i in range(len(grocery_list)):
 ---
 ## `in` and `not`
 - `in` and `not` operators are used to check if a list item actually exists in the list.
+```python
+books=["ACOTAR", "Fourth Wing", "The Ballad of Never After"]
+print("ACOTAR" in books) #prints True
+print("Shatter Me" in books) #prints False
+print("Fourth Wing" not in books) #prints False
+```
+---
+## Multiple Assignments
+```python
+house_a=["large", "rural", "cream-white"]
+size, region, color =house_a
+```
+is same as
+```python
+size=house_a[0]
+region=house_a[1]
+color=house_a[2]
+```
+---
+## `index()` Method
+```python
+colors=["red", "orange", "blue", "violet"]
+print(colors.index("red")) #prints 0
+```
+---
+## `append()`, `insert()` and `remove()`
+```python
+colors=["red", "orange", "blue", "violet"]
+colors.append("black")
+colors.insert(2, "white)
+colors.remove("orange")
+```
+- `colors.append("black")` adds "black" as list item in the end, i.e. gives it *index 4*  in list *colors*
+- `colors.insert(2, "white")` adds "white" as list item with *index 2* in list *colors*
+- `colors.remove("orange")` removes orange as a list item from list *colors*
+>`insert()` and `append()` only work with **lists** and not with normal variables (they can't convert a normal variable into a list)
+---
+## Sorting of lists
+- `sort` works only for lists having **only** number values or string values, **not both**.
+```python
+number=[1,2,3,4,-1,-3,-23,0,56,78]
+animals=["cat", "badger", "hedgehog"]
+number.sort()
+animals.sort()
+animals.sort(reverse=True)
+number.sort(reverse=True)
+```
+---
+# Data Type - List Like - Strings
+```python
+fruit="Mango"
+print(Mango[0]) #prints M
+print(Mango[3]) #prints g
+for i in fruit:
+    print(fruit[i], end=" ")
+```
