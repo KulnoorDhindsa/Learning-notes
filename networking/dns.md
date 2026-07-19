@@ -1,13 +1,24 @@
-# DNS - The Internet's Directory Service
-DNS describes the distributed database and protocol used to translate human-friendly hostnames into the IP addresses that network routers require to identify and locate end systems.
-## Services provided by DNS
-DNS is application-layer protocol running iver **UDP** on **port 53**
-- **Hostname-to-IP-address Translation**: Allows applications like browsers to find 32-bit IP address associated with a URL like `www.example.com`
-    - **IP Address** is a 32-bit address containg of 4 bytes, seperated by `.`, each byte between 0 - 255
-- **Host Aliasing**: A host can have one **canonical hostname** and one or more **alias names**, which are often more mnemonic
-- **Mail Server Aliasing**: DNS allows a company's mail server and Web server to have identical aliased hostnames (e.g. `enterprise.com`), while using different canonical names for the actual mail handling
-- **Load Distribution**: For busy sites replicated over multiple servers, DNS can associate a set of IP addresses with one canonical hostname, rotating the order of addresses in each reply to distribute traffic among servers
+# DNS (Domain Name System)
+- DNS, the Internet's *directory service* is the *distributed database* and *protocol* used to translate human-friendly hostnames into the IP addresses that network routers require to identify and locate end systems.
+---
+## Services Provided by DNS
 
+> DNS is an *application-layer* protocol that runs over **UDP** on **port 53** (falling back to TCP for larger responses).
+
+- **Hostname-to-IP-Address Translation**: Lets application-layer protocols like HTTP, SMTP, and FTP resolve a hostname (e.g. `www.example.com`) to the 32-bit IP address needed to open a connection.
+    - **IP address**: a 32-bit number consisting of 4 bytes separated by `.`, each byte ranging from 0 to 255.
+    - Resolution flow:
+```mermaid
+      graph LR
+         A[Client requests<br/>hostname resolution] --> B[Browser extracts<br/>hostname]
+         B --> C[Client sends query<br/>to DNS server]
+         C --> D[Server replies<br/>with IP address]
+         D --> E[Browser connects<br/>via TCP:80]
+```
+- **Host Aliasing**: A host can have one **canonical hostname** and one or more **alias names** that are typically easier to remember.
+- **Mail Server Aliasing**: DNS lets a company's mail server and web server share the same alias (e.g. both reachable via `enterprise.com`), even though each maps to a different canonical hostname behind the scenes.
+- **Load Distribution**: For a site replicated across multiple servers, DNS maps one canonical hostname to a *set* of IP addresses, rotating their order in each reply to spread traffic across the replicas.
+---
 ## How DNS works
 DNS is **distributed, hierarchial database** because a single, centralized server would not scale to the size of the modern Internet.
 - **The Hierarchy**:
@@ -19,7 +30,7 @@ DNS is **distributed, hierarchial database** because a single, centralized serve
 - **DNS Caching**: To improve performance and reduce traffic, DNS servers cache mappings they recieve; these are usually discarded after couple of days
 
 >**DNS Poisoning**: A security attack where an attacker sends bogus records to a DNS server to trick into caching false information.
-
+---
 ## DNS Records and Messages
 The database stores **Resource Records (RRs)** (basic unit of information), which are four-tuples containing: `(Name, Value, Type, TTL)`.
 - **Type A**: Name is a hostname, Value is its IP address
@@ -28,3 +39,5 @@ The database stores **Resource Records (RRs)** (basic unit of information), whic
 **Type MX**: Name is an alias, Value is the canonical name of a mail server
 
 DNS messages (*queries and replies*) share a unified format consisting of header, a question section, an answer section, an authority section, and an additional informaiton section
+
+
