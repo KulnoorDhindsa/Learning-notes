@@ -22,6 +22,7 @@
 ## How DNS works
 DNS is **distributed, hierarchial database** because a single, centralized server would not scale to the size of the modern Internet.
 - **The Hierarchy**:
+    1. **DNS Recursor (Resolver)**: Recieves intial query from web browser; tracks IP address; caches answers for quick responses in the future; thus is like librarian for computer
     - **Root DNS Servers**: There are 13 root servers (clusters of replicated servers) that provide the IP addresses of TLD servers
     - **Top-Level Domain (TLD) Servers**: These are responsible for generic domains like `.com`, `.org`, `.edu` and country domains like `.uk` and `.fr`.
     - **Authoritative DNS Servers**: These house the actual DNS records that contain an organization's hostname to IP addresses
