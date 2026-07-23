@@ -183,8 +183,65 @@ while True:
 			birthdays[name]=bday
 			print(birthdays[name], "is birthday of", name)
 ```
+## `keys()`, `values()` and `items()`
+```python
+pencile1={"color": "red", "length": "medium"}
+for k in pencile1.keys():
+    print(k) #prints keys 'color' and 'length'
+for v in pencile1.values():
+    print(v) #prints values 'red' and 'medium'
+for i in pencile1.items():
+    print(i) #prints items ('color', 'red') and ('length', 'medium') as tuples
+```
+>`items()` returns items of dictionary as tuples
 
+>The data types here are `dict_keys`, `dict_values` and `dict_items`.
+```python
+pen1={"color": "red", "type": "ballpoint"}
+print(pen1.keys(), pen1.values(), pen1.items(), sep="\n")
+#prints pen1 as a list when using `keys` and `values`
+#prints pen1 as a tuple when using `items`
+```
+Output:
+```output
+dict_keys(['color', 'type'])
+dict_values(['red', 'ballpoint'])
+dict_items([('color', 'red'), ('type', 'ballpoint')])
+```
+## `in`, `not in` and `get()`
+```python
+pencile={"color": 'red', "length": 'medium'}
+print('red' in pencile.keys()) #prints False, as red is a value not a key in dictionary pencile
+print('red' in pencile.values()) #prints True
+print('length' in pencile.keys()) #prints True
+print('length' in pencile.values()) #prints False
+print("My pencile is", pencile.get("color", "of a mystery color"), "and of", pencile.get("length", "length unknown"), "and it is of", pencile.get("brand", "brand unknown."))
+```
+- `get()` takes 2 arguments, the key to retrieve and what to display if that key doesn't exist in the dictionary.
 ---
+## `setdefault()`
+- `setdefault()` is used to add *keys* in a dictionary.
+```python
+message='Hi, I love the earth, its so green and blue at the same time.' 
+count={}
+for c in message:
+    count.setdefault(c, 0)
+    count[c]+=1
+print(count)
+```
+>`pprint` is pretty print.
+```python
+import pprint
+message='Hi, I love the earth, its so green and blue at the same time.' 
+count={}
+for c in message:
+    count.setdefault(c, 0)
+    count[c]+=1
+pprint.pprint(count) #pretty prints the count{}, in vertical lines with new lines after every item of the dictionary
+```
+
+
+
 |List|Tuple|Dictionary|
 |----|-----|----------|
 |Ordered elements (first element is indexed 0)|Ordered|Not ordered|
