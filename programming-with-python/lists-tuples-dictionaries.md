@@ -98,7 +98,7 @@ for i in range(len(fruit)): #for i in range of length of fruit
     print(fruit[i], end=" ") #prints letters of 'mango' with spaces
 ```
 ---
-# Data Type - Tuples
+# Data Type - Tuple
 - Lists are *mutable*, i.e. list items can be modifed (added, deleted, etc), but *tuples* are *immutable* like strings.
 - To modify strings:
 ```python
@@ -144,3 +144,47 @@ print(names2.append("James")) #shows `none` as it modified the list in-place, bu
 print(names2) #new value appended in the list is not stored in names2, now we can print it
 ```
 >`deepcopy()` copes lists in lists as well.
+---
+# Data Type - Dictionary
+- `dictionary` is a collection of many values.
+- Indexes in `dictionary` are *keys* and can be anything (not just int)
+- *key* with associated value is a *key-value pair*
+```python
+cat1={"size": "fat", "color": "black", "eyes": "grey"}
+print(cat1["color"])
+print("First cat has", cat1["eyes"], "eyes!")
+spam={1: "Yo", 23: "Bye"} #int keys work as well
+```
+- This creates a `dictionary` 'cat1' with *keys* `size`, `color` and `eyes`.
+## Not ordered
+```python
+spam1=["hi", "python", "is", "fun!"]
+spam2=["python", "hi", "fun!", "is"]
+print(spam1==spam2) #prints false
+spam3={"name": "Zues", "species": "cat", "age": 9}
+spam4={"species": "cat", "age": 9, "name": "Zues"}
+print(spam3==spam4) #prints true
+```
+- In spam1, "hi" has index 0, in spam2, "python" has index 0
+- In spam3 and spam4, *keys* are used, no by default indexing first element as i=0
+- `list` and `tuple` are *ordered*, `dictionary` is *un-ordered*.
+```python
+birthdays={"Alice": "1st jan", "Barry": "3rd November"}
+while True:
+	name=input("Enter your name (or blank to quit): ")
+	if name=="":
+		break
+	else:
+		if name in birthdays:
+			print(birthdays[name], "is birthday of", name)
+		else:
+			print("Not in database")
+			bday=input("When is your birthday? ")
+			birthdays[name]=bday
+			print(birthdays[name], "is birthday of", name)
+```
+
+---
+|List|Tuple|Dictionary|
+|----|-----|----------|
+|Ordered elements (first element is indexed 0)|Ordered|Not ordered|
