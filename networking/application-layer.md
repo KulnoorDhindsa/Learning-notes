@@ -45,7 +45,7 @@ Different services provided by *Transport Layer Protocol* to applications that i
 
 2. *Reliable Data Transfer Service*: TCP guarantees for same stream of bytes to reach receiving socket as it left the sending socket.
 3. *Congestion Control Mechanism*: Throttles sending prcoess when network is congested and limits each TCP to specified bandwidth.
-
+---
 ## UDP Services
 - *Connectionless* so no handshake before two processes start communicating.
 - No guarantee that messages will reach receiving process, if in order.
@@ -62,7 +62,7 @@ Different services provided by *Transport Layer Protocol* to applications that i
 
 >Internet Telephony applications can often cope with some loss but require minimal rate, UDP is sometimes prefered over TCP.
 >>Most firewalls are configured to block most UDP, Internet Telephony applications often designed to use TCP as backup.
-
+---
 ## Application Layer Protocols
 *Application Layer Protocols* define *type, **syntax, **meaning of information in fields* and *rules* of messages sent among application processes running on different end-systems.
 
@@ -317,5 +317,7 @@ The database stores **Resource Records (RRs)** (basic unit of information), whic
 
 DNS messages (*queries and replies*) share a unified format consisting of header, a question section, an answer section, an authority section, and an additional informaiton section
 
-
-
+---
+## Socket Programming
+Socket programming allows two networks of *client-server architecture* to communicate with each other using *sockets* which are basically *port numbers and IP address*.
+### Socket Programming with UDP
