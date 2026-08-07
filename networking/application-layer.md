@@ -320,4 +320,35 @@ DNS messages (*queries and replies*) share a unified format consisting of header
 ---
 ## Socket Programming
 Socket programming allows two networks of *client-server architecture* to communicate with each other using *sockets* which are basically *port numbers and IP address*.
+
+**Socket**: The software interface (API) between the application layer and the transport layer within a host
+
+**Port Number**: A 16-bit identifier assigned to a socket to distinguish between different network processes running on the same host
+
+**AF_INET**: A parameter used in socket creation that indicates the underlying network is using **IPv4**
+
+**SOCK_DGRAM**: The socket type used to indicate a UDP socket
+
+**SOCK_STREAM**: The socket type used to indicate a TCP socket
+
+**Welcoming Socket**: In TCP server programming, the initial socket that listens for connection requests from clients
+
+**Connection Socket**: In TCP, a new socket created by the server to handle communication with a specific client after the connection request is accepted
 ### Socket Programming with UDP
+User Datagram Protocol (UDP) provides an unreliable, connectionless service
+- There is **no "handshake"** before data is sent.
+- **Creating a Socket**: In Python, a UDP socket is created using `SOCK_DGRAM`.
+- **Sending Data**: Because there is no established connection, the sending process must explicitly attach the **destination address** (IP address and port number) to every packet it shoves out the "socket door".
+- **Receiving Data**: The server typically uses `bind()` to assign a specific port number to its socket so it can listen for incoming packets
+    - When a packet arrives, the receiver uses `recvfrom()` to retrieve the data and the **source address** of the sender, allowing it to know where to send a reply
+
+### Socket Programming with TCP
+Transmission Control Protocol (TCP) is connection-oriented and provides a reliable, in-order byte-stream service
+- **The Three-Way Handshake**: Before the client and server can exchange data, they must perform a handshake to establish a connection
+    - This process is invisible to the application programs
+- **Welcoming Socket**: A server must be running and have a special socket (a "welcoming door") that waits for an initial contact from any client
+- **Connection Socket**: When the server "hears" a client "knocking" on the welcoming door, it creates a **new socket** dedicated specifically to that client for the duration of the connection
+- **Reliable Data Transfer**: Once the connection is established, the client and server are connected by a "pipe"
+    - The programs simply drop data into the socket using **send()**, and TCP guarantees it will arrive at the other side in the correct order
+---
+
