@@ -7,4 +7,8 @@ Transport-layer provides logical communication between *processes* running on di
 
 IP is *Internet's network-layer protocol*, which tries to deliver *all* the segments between communicating hosts, with *no guarantees*.
 
-**Multiplexing** and **De-multiplexing** are *transport layer functions* that turn host-to-host IP delivery into process-to-process delivery running on the two communicating end systems.
+**Sockets** act as doors allowing data to pass from network to process and process to network. 
+
+**Multiplexing** and **De-multiplexing** are *transport layer functions* that turn host-to-host IP delivery into process-to-process further socket-to-socket delivery running on the two communicating end systems.
+
+The specific sockets involved in *multiplexing* and *de-multiplexing* are marked with **source port number fields**
