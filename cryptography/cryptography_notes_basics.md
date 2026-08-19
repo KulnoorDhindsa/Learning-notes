@@ -14,7 +14,7 @@ The most general term *cryptology* is divided into two branches:
 ## Symmetric Cryptography
 Symmetric Cryptography = Symmetric-key = Secret-key = Single-key schemes
 
-*eavesdropping* is unauthorized listening.
+*eavesdropping* is unauthorized listening. 
 
 >Strong encryption patterns look gibberish to malicious users eavesdropping onto our conversation !
 
@@ -24,3 +24,16 @@ Symmetric Cryptography = Symmetric-key = Secret-key = Single-key schemes
 |`y`|Ciphertext|
 |`k`|Key|
 |`key space`|Set of all possible keys|
+
+Only secret to be kept in a *sound* cryptosystem is the key. 
+
+>Problem of transmitting the encrypted code secretly, changes to transmitting the **key** secretly.
+
+## Simple Symmetric Encryption / The Substitution Cipher
+
+Substitution means substitution of each letter with another. 
+
+>Substitution cipher is NOT secure at all!! 
+
+Attacks include:
+1. **Brute force** attack: 
