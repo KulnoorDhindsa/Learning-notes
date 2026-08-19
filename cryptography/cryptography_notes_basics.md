@@ -36,4 +36,13 @@ Substitution means substitution of each letter with another.
 >Substitution cipher is NOT secure at all!! 
 
 Attacks include:
-1. **Brute force** attack: 
+1. **Brute force** attack: Manually, all possible *keys* are tried  
+    - Treated cipher as a *black box* 
+    - Incorrect keys can give wrong conclusions, which might still make sense
+    - Cypher is said to be *computationaly secure* against brute force attacks if testing all keys takes a long time 
+    - Calculation of sample-space: if letter 'a' is assigned any random letter out of 26 alphabets (including a itself), there are 2^88w(26 factorial) possibilities!! excluding assigning all caps letters (a is B, instead of b)) 
+
+2. **Letter Frequency Analysis**: Involves analysis of the cypher
+    - If letter 'z' appears frequently, then 'z' is assigned to a 'frequently used letter in English' like e (11-13%), t (9%) etc and vica-versa. 
+    - 'q' is *mostly* frequented by 'u' 
+    - By chance, if word separators like blanks and spaces are found, short words like 'the' and 'and' van be de-crypted. 
