@@ -46,3 +46,16 @@ Attacks include:
     - If letter 'z' appears frequently, then 'z' is assigned to a 'frequently used letter in English' like e (11-13%), t (9%) etc and vica-versa. 
     - 'q' is *mostly* frequented by 'u' 
     - By chance, if word separators like blanks and spaces are found, short words like 'the' and 'and' van be de-crypted. 
+## Cryptanalysis
+  ```mermaid
+graph TD
+    A[Cryptanalysis] --> B[Classical Cryptanalysis]
+    A --> C[Implementation Attacks]
+    A --> D[Social Engineering]
+    B --> E[Mathematical Analysis]
+    B --> F[Brute-Force Attacks]
+```
+
+**Classical Cryptanalysis**: Recovering *plaintext* x or *key* k from *ciphertext* y.
+
+**Social Engineering Attacks**: Bribing, classical manipulation along with tricking to obtain the *key* k.
