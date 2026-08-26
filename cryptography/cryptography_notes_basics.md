@@ -59,3 +59,6 @@ graph TD
 **Classical Cryptanalysis**: Recovering *plaintext* x or *key* k from *ciphertext* y.
 
 **Social Engineering Attacks**: Bribing, classical manipulation along with tricking to obtain the *key* k.
+
+**Modular Arithmetics**: Performing arithmetic in a finite set of integers.
+- **equivalence class**: Groups of different cryptographic inputs/keys that produce identical observable results under an *equivalence relation*.
