@@ -87,7 +87,14 @@ Instead of *stop-and-wait* protocol, its better if **multiple packets** are sent
 1. **Go-Back-N (GBN) / Sliding-Window protocol**:
     - Multiple packets can be sent in the channel for *pipeline* without ACKs upto a **certain limit** say N
     - Upon recieving ACKs, this *window of N packets* is slid forward (thus its name)
+    - 2 states exist, the intial one with the previous ACK, and the next one i.e. the one with the new ACK
+    - A *time-out* is used, so when it expires, re-transmission is done if ACK is not recieved
 2. **Selective Repeat (SR)**:
+    - Avoids retransmission of packets by allowing sender to send only those packets again which are **suspected** of error, in place of every packet that might be blocked because of the error causing packet
+---    
+### TCP: Connection-Oriented Transport
+TCP in file `protocols.md` in `networking` folder.
+
 
 
 

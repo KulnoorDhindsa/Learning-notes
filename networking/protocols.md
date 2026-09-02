@@ -32,3 +32,10 @@ UDP is still used as:
     - **Checksum**:  (2 bytes) Recieving host uses it to detect any *accidental* error in the segment like data corrupted due to **signal loss**
         - UDP *Checksum* **DOES NOT** check for malicious entries in segments, its only a maths formula, easy to fake
 - **Data Payload**: The Application layer data being sent (e.g. a DNS query) of variable length (determined by `Length` in the header)
+---
+# TCP
+Its called *connection-oriented* as before the actual sender sends data to reciever, a *handshake* takes place.
+- The *handshake* consists of *segments* of information regarding both devices and their ports.
+>TCP only runs on end-systems!
+- **duplex-service**: If data is being transfered from A to B, then at same time, data can be transfered from B to A
+- **point-to-point**: TCP connection is point
